@@ -1,3 +1,5 @@
+import numpy as np
+
 
 def ema(data, period):
     """
@@ -15,6 +17,8 @@ def ema(data, period):
         ema_helper(data[idx - period + 1:idx + 1], period),
         range(period - 1, len(data))
         )
+    non_computable_values = np.repeat(np.nan, len(data) - len(emas))
+    emas = np.append(non_computable_values, emas)
     return emas
 
 
