@@ -5,7 +5,10 @@ def ema(data, period):
     """
     Exponential Moving Average.
 
-    Moving average where more weight is given to recent values.
+    Formula: p0 + (1 - w) * p1 + (1 - w)^2 * p2 + (1 + w)^3 * p3 +...
+                /   1 + (1 - w) + (1 - w)^2 + (1 - w)^3 +...
+
+            where: w = 2 / (N + 1)
     """
     period = int(period)
     data_len = len(data)
