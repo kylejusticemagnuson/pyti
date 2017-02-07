@@ -1,5 +1,7 @@
 import numpy as np
 
+from financial_indicators import catch_errors
+
 
 def ema(data, period):
     """
@@ -10,11 +12,7 @@ def ema(data, period):
 
             where: w = 2 / (N + 1)
     """
-    period = int(period)
-    data_len = len(data)
-    if data_len < period:
-        # show error message
-        raise SystemExit('Error: data_len < period')
+    catch_errors.check_for_period_error(data, period)
     emas = map(
         lambda idx:
         ema_helper(data[idx - period + 1:idx + 1], period),

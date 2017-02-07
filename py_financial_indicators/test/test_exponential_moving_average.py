@@ -28,3 +28,18 @@ class TestExponentialMovingAverage(unittest.TestCase):
         self.assertTrue(np.isnan(emas[6]))
         self.assertAlmostEqual(emas[7], 5.73701805)
         self.assertAlmostEqual(emas[9], 7.73701805)
+
+    def test_ema_period_10(self):
+        period = 10
+        emas = exponential_moving_average.ema(self.data, period)
+        # [np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan,
+        #  np.nan, 7.05308907]
+        self.assertEqual(len(emas), 10)
+        self.assertTrue(np.isnan(emas[8]))
+        self.assertAlmostEqual(emas[9], 7.05308907)
+
+    def test_ema_invalid_period(self):
+        period = 11
+        # a period greater than the data length should raise an exception
+        with self.assertRaises(Exception):
+            exponential_moving_average.ema(self.data, period)

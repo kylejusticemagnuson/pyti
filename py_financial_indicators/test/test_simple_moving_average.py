@@ -27,3 +27,18 @@ class TestSimpleMovingAverage(unittest.TestCase):
         self.assertTrue(np.isnan(smas[6]))
         self.assertEqual(smas[7], 4.5)
         self.assertEqual(smas[9], 6.5)
+
+    def test_sma_period_10(self):
+        period = 10
+        smas = simple_moving_average.sma(self.data, period)
+        # [np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan,
+        #  np.nan, 5.5]
+        self.assertEqual(len(smas), 10)
+        self.assertTrue(np.isnan(smas[8]))
+        self.assertEqual(smas[9], 5.5)
+
+    def test_sma_invalid_period(self):
+        period = 11
+        # a period greater than the data length should raise an exception
+        with self.assertRaises(Exception):
+            simple_moving_average.sma(self.data, period)
