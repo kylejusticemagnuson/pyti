@@ -1,3 +1,4 @@
-TODO: Make a README
+TODO: Make a real README
 
-When advisory alpha is over don't rely on the system python
+List of technical indicators
+https://www.tradingtechnologies.com/help/x-study/technical-indicator-definitions/list-of-technical-indicators/
