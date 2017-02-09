@@ -1,4 +1,4 @@
-TODO: Make a real README
+# py-financial-indicators
 
-List of technical indicators
-https://www.tradingtechnologies.com/help/x-study/technical-indicator-definitions/list-of-technical-indicators/
+Library containing various financial indicators.
+The full List of financial indicators is in technical_indicators.md under docs.
