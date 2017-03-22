@@ -7,5 +7,6 @@ Exponential Moving Average
 Simple Moving Average
 Rate of Change
 Relative Strength Index
+Triple Exponential Moving Average
 Weighted Moving Average
 ```
