@@ -1,4 +1,4 @@
 # py-technical-indicators
 
-Library containing various financial indicators.
-The full list of financial indicators is in technical_indicators.md under docs.
+Library containing various financial technical indicators.
+The full list of financial technical indicators is in technical_indicators.md under docs.
