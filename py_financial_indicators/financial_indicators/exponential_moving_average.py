@@ -1,5 +1,4 @@
 import numpy as np
-
 from financial_indicators import catch_errors
 
 
