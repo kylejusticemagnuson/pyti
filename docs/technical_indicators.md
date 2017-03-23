@@ -5,6 +5,7 @@ Bollinger Bands
 Double Exponential Moving Average
 Exponential Moving Average
 Simple Moving Average
+Standard Deviation
 Rate of Change
 Relative Strength Index
 Triangular Moving Average
