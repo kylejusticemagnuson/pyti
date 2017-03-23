@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from sample_data import SampleData
-from financial_indicators import triangular_moving_average
+from technical_indicators import triangular_moving_average
 
 
 class TestTriangularMovingAverage(unittest.TestCase):

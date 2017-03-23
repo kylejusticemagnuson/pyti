@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from sample_data import SampleData
-from financial_indicators import aroon
+from technical_indicators import aroon
 
 
 class TestAroon(unittest.TestCase):

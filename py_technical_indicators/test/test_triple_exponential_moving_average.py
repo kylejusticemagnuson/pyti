@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from sample_data import SampleData
-from financial_indicators import triple_exponential_moving_average
+from technical_indicators import triple_exponential_moving_average
 
 
 class TestTripleExponentialMovingAverage(unittest.TestCase):

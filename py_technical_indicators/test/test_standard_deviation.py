@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from sample_data import SampleData
-from financial_indicators import standard_deviation
+from technical_indicators import standard_deviation
 
 
 class TestStandardDeviation(unittest.TestCase):

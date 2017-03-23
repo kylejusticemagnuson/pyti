@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from sample_data import SampleData
-from financial_indicators import bollinger_bands
+from technical_indicators import bollinger_bands
 
 
 class TestBollingerBands(unittest.TestCase):

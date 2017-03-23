@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from sample_data import SampleData
-from financial_indicators import relative_strength_index
+from technical_indicators import relative_strength_index
 
 
 class TestRelativeStrengthIndex(unittest.TestCase):
