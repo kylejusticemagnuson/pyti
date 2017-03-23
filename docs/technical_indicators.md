@@ -1,6 +1,7 @@
 This is the full list of the technical indicators available in this package:
 
 ```
+Aroon
 Bollinger Bands
 Double Exponential Moving Average
 Exponential Moving Average
