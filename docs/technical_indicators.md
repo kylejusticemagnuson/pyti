@@ -19,6 +19,7 @@ Moving Average Convergence Divergence
 Price Channels
   -Upper Price Channel
   -Lower Price Channel
+Price Oscillator
 Simple Moving Average
 Smoothed Moving Average
 Standard Deviation

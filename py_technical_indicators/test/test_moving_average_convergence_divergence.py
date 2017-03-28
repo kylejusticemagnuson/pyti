@@ -134,25 +134,25 @@ class TestStandardVariance(unittest.TestCase):
         -14.609174792788281, -14.676099492783123, -13.790585278138337]
 
     def test_macd_period_6_period_12(self):
-        period_1 = 6
-        period_2 = 12
-        macd = moving_average_convergence_divergence.moving_average_convergence_divergence(self.data, period_1, period_2)
+        short_period = 6
+        long_period = 12
+        macd = moving_average_convergence_divergence.moving_average_convergence_divergence(self.data, short_period, long_period)
         np.testing.assert_array_equal(macd, self.macd_period_6_period_12_expected)
 
     def test_macd_period_8_period_16(self):
-        period_1 = 8
-        period_2 = 16
-        macd = moving_average_convergence_divergence.moving_average_convergence_divergence(self.data, period_1, period_2)
+        short_period = 8
+        long_period = 16
+        macd = moving_average_convergence_divergence.moving_average_convergence_divergence(self.data, short_period, long_period)
         np.testing.assert_array_equal(macd, self.macd_period_8_period_16_expected)
 
     def test_macd_period_10_period_20(self):
-        period_1 = 10
-        period_2 = 20
-        macd = moving_average_convergence_divergence.moving_average_convergence_divergence(self.data, period_1, period_2)
+        short_period = 10
+        long_period = 20
+        macd = moving_average_convergence_divergence.moving_average_convergence_divergence(self.data, short_period, long_period)
         np.testing.assert_array_equal(macd, self.macd_period_10_period_20_expected)
 
     def test_macd_invalid_period(self):
-        period_1 = 128
-        period_2 = 1
+        short_period = 128
+        long_period = 1
         with self.assertRaises(Exception):
-            moving_average_convergence_divergence.moving_average_convergence_divergence(self.data, period_1, period_2)
+            moving_average_convergence_divergence.moving_average_convergence_divergence(self.data, short_period, long_period)
