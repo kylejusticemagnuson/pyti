@@ -2,11 +2,19 @@ This is the full list of the technical indicators available in this package:
 
 ```
 Aroon
+  -Aroon Up
+  -Aroon Down
 Bollinger Bands
+  -Upper Bollinger Band
+  -Middle Bollinger Band
+  -Lower Bollinger Band
+  -Bandwidth
+  -Percent Bandwidth
 Double Exponential Moving Average
 Exponential Moving Average
 Simple Moving Average
 Standard Deviation
+Standard Variance
 Rate of Change
 Relative Strength Index
 Triangular Moving Average
