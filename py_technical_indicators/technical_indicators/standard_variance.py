@@ -9,6 +9,7 @@ def standard_variance(data, period):
 
     (Ct - AVGt)^2 / N
     """
+    catch_errors.check_for_period_error(data, period)
     sv = map(
         lambda idx:
         np.var(data[idx+1-period:idx+1], ddof=1),

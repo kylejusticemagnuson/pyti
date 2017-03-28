@@ -152,3 +152,8 @@ class TestStandardVariance(unittest.TestCase):
         period = 10
         sv = standard_variance.standard_variance(self.data, period)
         np.testing.assert_array_equal(sv, self.sv_period_10_expected)
+
+    def test_standard_variance_invalid_period(self):
+        period = 128
+        with self.assertRaises(Exception):
+            standard_variance.standard_variance(self.data, period)
