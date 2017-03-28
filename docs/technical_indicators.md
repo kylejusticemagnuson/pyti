@@ -13,6 +13,7 @@ Bollinger Bands
 Detrended Price Oscillator
 Double Exponential Moving Average
 Exponential Moving Average
+Linear Weighted Moving Average
 Momentum
 Moving Average Convergence Divergence
 Simple Moving Average
