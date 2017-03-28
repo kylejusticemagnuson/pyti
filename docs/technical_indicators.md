@@ -16,6 +16,7 @@ Exponential Moving Average
 Momentum
 Moving Average Convergence Divergence
 Simple Moving Average
+Smoothed Moving Average
 Standard Deviation
 Standard Variance
 Rate of Change
