@@ -10,6 +10,7 @@ Bollinger Bands
   -Lower Bollinger Band
   -Bandwidth
   -Percent Bandwidth
+Detrended Price Oscillator
 Double Exponential Moving Average
 Exponential Moving Average
 Moving Average Convergence Divergence
