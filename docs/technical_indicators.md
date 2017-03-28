@@ -12,6 +12,7 @@ Bollinger Bands
   -Percent Bandwidth
 Double Exponential Moving Average
 Exponential Moving Average
+Moving Average Convergence Divergence
 Simple Moving Average
 Standard Deviation
 Standard Variance
