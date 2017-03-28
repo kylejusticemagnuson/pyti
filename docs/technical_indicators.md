@@ -16,6 +16,9 @@ Exponential Moving Average
 Linear Weighted Moving Average
 Momentum
 Moving Average Convergence Divergence
+Price Channels
+  -Upper Price Channel
+  -Lower Price Channel
 Simple Moving Average
 Smoothed Moving Average
 Standard Deviation
