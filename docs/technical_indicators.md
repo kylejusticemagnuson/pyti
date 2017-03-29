@@ -32,5 +32,6 @@ Relative Strength Index
 Triangular Moving Average
 Triple Exponential Moving Average
 Vertical Horizontal Filter
+Volatility
 Weighted Moving Average
 ```
