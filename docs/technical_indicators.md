@@ -24,6 +24,9 @@ Simple Moving Average
 Smoothed Moving Average
 Standard Deviation
 Standard Variance
+Stochastic
+  -%K
+  -%D
 Rate of Change
 Relative Strength Index
 Triangular Moving Average
