@@ -4,8 +4,6 @@ import numpy as np
 from sample_data import SampleData
 from technical_indicators import aroon
 
-import random
-
 
 class TestAroon(unittest.TestCase):
     def setUp(self):
