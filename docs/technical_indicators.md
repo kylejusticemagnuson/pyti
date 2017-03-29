@@ -32,6 +32,7 @@ Rate of Change
 Relative Strength Index
 Triangular Moving Average
 Triple Exponential Moving Average
+True Range
 Vertical Horizontal Filter
 Volatility
 Weighted Moving Average
