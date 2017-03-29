@@ -4,6 +4,8 @@ import numpy as np
 from sample_data import SampleData
 from technical_indicators import aroon
 
+import random
+
 
 class TestAroon(unittest.TestCase):
     def setUp(self):
@@ -77,3 +79,12 @@ class TestAroon(unittest.TestCase):
         period = 14
         aroon_down = aroon.aroon_down(self.data, period)
         np.testing.assert_array_equal(aroon_down, self.aroon_down_period_14)
+
+
+
+    def test_create_sample(self):
+        new = []
+        for val in self.data:
+            dev = random.uniform(-3, -2)
+            new.append(round(val + dev, 2))
+        print new
