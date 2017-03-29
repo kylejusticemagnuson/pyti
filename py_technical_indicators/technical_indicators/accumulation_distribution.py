@@ -12,7 +12,7 @@ def accumulation_distribution(close_data, high_data, low_data, volume):
     ad = np.zeros(len(close_data))
     for idx in range(1, len(close_data)):
         ad[idx] = (
-            ((close_data[idx] - low_data[idx]) -
+            (((close_data[idx] - low_data[idx]) -
             (high_data[idx] - close_data[idx])) /
             (high_data[idx] - low_data[idx]) *
             volume[idx]) +
