@@ -8,7 +8,7 @@ from technical_indicators import relative_strength_index
 class TestRelativeStrengthIndex(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.rsi_period_6_expected = [np.nan, np.nan, np.nan, np.nan, np.nan,
         np.nan, 91.128696376509808, 92.285403839188717, 80.894025017461274,

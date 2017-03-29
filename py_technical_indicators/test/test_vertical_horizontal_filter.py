@@ -8,7 +8,7 @@ from technical_indicators import vertical_horizontal_filter
 class TestVerticalHorizontalFilter(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.vhf_period_6_expected = [np.nan, np.nan, np.nan, np.nan, np.nan,
         0.45144628099173539, 0.40698689956331935, 0.41653605015673995, 0.5, 0.5,

@@ -8,7 +8,7 @@ from technical_indicators import rate_of_change
 class TestRateOfChange(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.roc_period_6_expected = [np.nan, np.nan, np.nan, np.nan, np.nan,
         2.1742696700107143, 1.1608210442407396, 1.32120262997626,

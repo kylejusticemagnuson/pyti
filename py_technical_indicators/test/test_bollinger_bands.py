@@ -8,7 +8,7 @@ from technical_indicators import bollinger_bands
 class TestBollingerBands(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.upper_bb_period_6_expected = [np.nan, np.nan, np.nan, np.nan,
         np.nan, 816.52449933994092, 814.27550939504749, 816.54237371875843,

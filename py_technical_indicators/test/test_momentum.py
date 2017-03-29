@@ -8,7 +8,7 @@ from technical_indicators import momentum
 class TestMomentum(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.momentum_period_6_expected = [np.nan, np.nan, np.nan, np.nan,
         np.nan, 17.229999999999905, 9.32000000000005, 10.629999999999995,

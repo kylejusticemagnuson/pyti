@@ -8,7 +8,7 @@ from technical_indicators import detrended_price_oscillator
 class TestDetrendedPriceOscillator(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.dop_period_6_expected = [np.nan, np.nan, np.nan, np.nan, np.nan,
         1.6849999999999454, 2.2975000000001273, 3.9800000000000182,

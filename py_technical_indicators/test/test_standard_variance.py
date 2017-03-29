@@ -8,7 +8,7 @@ from technical_indicators import standard_variance
 class TestStandardVariance(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.sv_period_6_expected = [np.nan, np.nan, np.nan, np.nan, np.nan,
         43.004616666666188, 12.411866666666613, 13.249626666666739,

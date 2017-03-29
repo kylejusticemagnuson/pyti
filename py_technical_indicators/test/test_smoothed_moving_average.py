@@ -8,7 +8,7 @@ from technical_indicators import smoothed_moving_average
 class TestSmoothedMovingAverage(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.smmma_period_6_expected = [np.nan, np.nan, np.nan, np.nan, np.nan,
         246.68995370370371, 247.56712962962965, 248.35231481481483,

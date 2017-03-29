@@ -8,7 +8,7 @@ from technical_indicators import simple_moving_average
 class TestSimpleMovingAverage(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.sma_period_6_expected = [np.nan, np.nan, np.nan, np.nan, np.nan,
         804.55166666666673, 807.84333333333336, 809.89666666666665,

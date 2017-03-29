@@ -8,7 +8,7 @@ from technical_indicators import moving_average_convergence_divergence
 class TestStandardVariance(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.macd_period_6_period_12_expected = [np.nan, np.nan, np.nan, np.nan,
         np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan,

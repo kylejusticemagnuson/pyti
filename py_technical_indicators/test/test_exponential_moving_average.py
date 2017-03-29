@@ -8,7 +8,7 @@ from technical_indicators import exponential_moving_average
 class TestExponentialMovingAverage(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.ema_period_6_expected = [np.nan, np.nan, np.nan, np.nan, np.nan,
         807.02732709950601, 809.36943856347534, 811.57440210146626,

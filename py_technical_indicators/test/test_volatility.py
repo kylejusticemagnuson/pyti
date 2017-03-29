@@ -8,7 +8,7 @@ from technical_indicators import volatility
 class TestVolatility(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.volatility_period_6_expected = [np.nan, np.nan, np.nan, np.nan,
         np.nan, 0.1524903845374864, 0.28384513123292787, 0.27472499826423863,

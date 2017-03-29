@@ -8,7 +8,7 @@ from technical_indicators import aroon
 class TestAroon(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.aroon_up_period_6_expected = [np.nan, np.nan, np.nan, np.nan,
         np.nan, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 100.0,

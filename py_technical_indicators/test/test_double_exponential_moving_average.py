@@ -8,7 +8,7 @@ from technical_indicators import double_exponential_moving_average
 class TestDoubleExponentialMovingAverage(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.dema_period_6_expected = [np.nan, np.nan, np.nan, np.nan, np.nan,
         np.nan, np.nan, np.nan, np.nan, np.nan, 814.39826450317082,

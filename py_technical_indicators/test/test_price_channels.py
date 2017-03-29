@@ -8,7 +8,7 @@ from technical_indicators import price_channels
 class TestPriceChannels(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.upc_period_6_upper_percent_6_expected = [np.nan, np.nan, np.nan,
         np.nan, np.nan, 855.44896672547645, 857.93160487728392,

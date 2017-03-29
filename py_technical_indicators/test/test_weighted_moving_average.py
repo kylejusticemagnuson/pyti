@@ -8,7 +8,7 @@ from technical_indicators import weighted_moving_average
 class TestWeightedMovingAverage(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.wma_period_6_expected = [np.nan, np.nan, np.nan, np.nan, np.nan,
         807.08190476190487, 809.26714285714286, 811.36904761904759,

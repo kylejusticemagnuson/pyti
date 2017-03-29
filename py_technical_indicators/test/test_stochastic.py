@@ -8,7 +8,7 @@ from technical_indicators import stochastic
 class TestStochastic(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.percent_k_period_6_expected = [np.nan, np.nan, np.nan, np.nan,
         np.nan, 0.9856979405034324, 1.0, 1.0, 0.63513513513513342,

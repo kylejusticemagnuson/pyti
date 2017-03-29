@@ -3,7 +3,7 @@ import numpy as np
 
 class SampleData(object):
     def __init__(self):
-        self.sample_stock_data = [
+        self.sample_close_data = [
             792.45, 802.88, 804.57, 809.93, 807.8, 809.68, 812.2, 815.2, 812.5,
             809.84, 815.65, 817.89, 815.34, 807.9, 809.45, 795.17, 791.47,
             776.18, 778.22, 764.46, 764.33, 775.88, 789.44, 785.79, 780.2, 779,
@@ -22,5 +22,5 @@ class SampleData(object):
             707.26, 708.97, 704.89, 710.25
             ]
 
-    def get_sample_stock_data(self):
-        return self.sample_stock_data
+    def get_sample_close_data(self):
+        return self.sample_close_data

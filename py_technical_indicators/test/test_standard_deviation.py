@@ -8,7 +8,7 @@ from technical_indicators import standard_deviation
 class TestStandardDeviation(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
-        self.data = SampleData().get_sample_stock_data()
+        self.data = SampleData().get_sample_close_data()
 
         self.std_period_6_expected = [np.nan, np.nan, np.nan, np.nan, np.nan,
         6.5577905323871235, 3.523047922845588, 3.64000366300183,
