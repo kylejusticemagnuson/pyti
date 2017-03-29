@@ -5,6 +5,7 @@ Accumulation/Distribution
 Aroon
   -Aroon Up
   -Aroon Down
+Average True Range
 Bollinger Bands
   -Upper Bollinger Band
   -Middle Bollinger Band
