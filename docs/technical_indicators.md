@@ -5,6 +5,7 @@ Accumulation/Distribution
 Aroon
   -Aroon Up
   -Aroon Down
+Average Directional Index
 Average True Range
 Bollinger Bands
   -Upper Bollinger Band
@@ -18,6 +19,10 @@ Exponential Moving Average
 Linear Weighted Moving Average
 Momentum
 Moving Average Convergence Divergence
+Negative Directional Movement (-DM)
+Negative Directional Index (-DI)
+Positive Directional Index (+DI)
+Positive Directional Movement (+DM)
 Price Channels
   -Upper Price Channel
   -Lower Price Channel
