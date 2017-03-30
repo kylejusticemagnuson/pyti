@@ -7,6 +7,7 @@ Aroon
   -Aroon Down
 Average Directional Index
 Average True Range
+Average True Range Percent
 Bollinger Bands
   -Upper Bollinger Band
   -Middle Bollinger Band
