@@ -41,5 +41,8 @@ Triple Exponential Moving Average
 True Range
 Vertical Horizontal Filter
 Volatility
+Volume Index
+  -Positive Volume Index
+  -Negative Volume Index
 Weighted Moving Average
 ```
