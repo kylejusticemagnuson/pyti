@@ -18,6 +18,7 @@ Double Exponential Moving Average
 Exponential Moving Average
 Linear Weighted Moving Average
 Momentum
+Money Flow
 Moving Average Convergence Divergence
 Negative Directional Movement (-DM)
 Negative Directional Index (-DI)

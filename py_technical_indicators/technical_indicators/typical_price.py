@@ -13,4 +13,4 @@ def typical_price(close_data, high_data, low_data):
         (high_data[idx] - low_data[idx] + close_data[idx]) / 3,
         range(0, len(close_data))
         )
-    return tp
+    return np.array(tp)
