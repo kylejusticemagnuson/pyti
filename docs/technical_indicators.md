@@ -15,6 +15,7 @@ Bollinger Bands
   -Bandwidth
   -Percent Bandwidth
 Chaikin Money Flow
+Chande Momentum Oscillator
 Detrended Price Oscillator
 Double Exponential Moving Average
 Exponential Moving Average
