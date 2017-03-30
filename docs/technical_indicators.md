@@ -21,6 +21,7 @@ Detrended Price Oscillator
 Double Exponential Moving Average
 Double Smoothed Stochastic
 Exponential Moving Average
+Hull Moving Average
 Linear Weighted Moving Average
 Momentum
 Money Flow
