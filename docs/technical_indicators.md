@@ -14,6 +14,7 @@ Bollinger Bands
   -Lower Bollinger Band
   -Bandwidth
   -Percent Bandwidth
+Chaikin Money Flow
 Detrended Price Oscillator
 Double Exponential Moving Average
 Exponential Moving Average
