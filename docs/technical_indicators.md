@@ -19,14 +19,15 @@ Chande Momentum Oscillator
 Commodity Channel Index
 Detrended Price Oscillator
 Double Exponential Moving Average
+Double Smoothed Stochastic
 Exponential Moving Average
 Linear Weighted Moving Average
 Momentum
 Money Flow
 Money Flow Index
 Moving Average Convergence Divergence
-Negative Directional Movement (-DM)
 Negative Directional Index (-DI)
+Negative Directional Movement (-DM)
 Positive Directional Index (+DI)
 Positive Directional Movement (+DM)
 Price Channels

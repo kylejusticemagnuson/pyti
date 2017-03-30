@@ -155,6 +155,5 @@ class TestExponentialMovingAverage(unittest.TestCase):
 
     def test_exponential_moving_average_invalid_period(self):
         period = 128
-        # a period greater than the data length should raise an exception
         with self.assertRaises(Exception):
             exponential_moving_average.exponential_moving_average(self.data, period)
