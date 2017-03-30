@@ -1,4 +1,5 @@
 import numpy as np
+import warnings
 import catch_errors
 
 
@@ -22,5 +23,9 @@ def chande_momentum_oscillator(close_data, period):
 
     sum_up = np.array(sum_up)
     sum_down = np.array(sum_down)
-    cmo = 100 * ((sum_up - sum_down) / (sum_up + sum_down))
+    # numpy is able to handle dividing by zero and makes those calculations
+    # nans which is what we want, so we safely suppress the RuntimeWarning
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", category=RuntimeWarning)
+        cmo = 100 * ((sum_up - sum_down) / (sum_up + sum_down))
     return cmo
