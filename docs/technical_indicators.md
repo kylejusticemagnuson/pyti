@@ -39,6 +39,7 @@ Relative Strength Index
 Triangular Moving Average
 Triple Exponential Moving Average
 True Range
+Typical Price
 Vertical Horizontal Filter
 Volatility
 Volume Index
