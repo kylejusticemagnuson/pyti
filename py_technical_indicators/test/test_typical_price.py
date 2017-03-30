@@ -5,7 +5,7 @@ from sample_data import SampleData
 from technical_indicators import typical_price
 
 
-class TestAccumulationDistribution(unittest.TestCase):
+class TestTypicalPrice(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
         self.close_data = SampleData().get_sample_close_data()
