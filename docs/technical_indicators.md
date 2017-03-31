@@ -22,6 +22,12 @@ Double Exponential Moving Average
 Double Smoothed Stochastic
 Exponential Moving Average
 Hull Moving Average
+Ichimoku Cloud
+  -TenkanSen
+  -KijunSen
+  -Chiku Span
+  -Senkou A
+  -Senkou B
 Linear Weighted Moving Average
 Momentum
 Money Flow
