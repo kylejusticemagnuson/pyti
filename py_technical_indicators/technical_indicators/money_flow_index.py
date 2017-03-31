@@ -1,4 +1,5 @@
 import numpy as np
+import warnings
 import catch_errors
 from typical_price import typical_price
 from money_flow import money_flow
@@ -22,7 +23,11 @@ def money_flow_index(close_data, high_data, low_data, volume, period):
     pmf = map(lambda idx: sum(pf[idx+1-period:idx+1]), range(period-1, len(pf)))
     nmf = map(lambda idx: sum(nf[idx+1-period:idx+1]), range(period-1, len(nf)))
 
-    money_ratio = np.array(pmf) / np.array(nmf)
+    # Dividing by 0 is not an issue, it turns the value into NaN which we would
+    # want in that case
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", category=RuntimeWarning)
+        money_ratio = np.array(pmf) / np.array(nmf)
 
     mfi = 100 - (100 / (1 + money_ratio))
 
