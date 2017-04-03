@@ -1,11 +1,7 @@
 from setuptools import setup, find_packages
-from codecs import open
 from os import path
 
 here = path.abspath(path.dirname(__file__))
-
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
-    long_discription = f.read()
 
 setup(
     name="py-technical-indicators",
@@ -13,7 +9,6 @@ setup(
     version='0.1.0',
 
     description='Library containing various technical indicator functions',
-    long_discription=long_discription,
 
     url='https://github.com/kylejusticemagnuson/py-technical-indicators',
 
