@@ -9,7 +9,10 @@ def calculate_up_moves(high_data):
     Up Move.
     UPMOVE = Ht - Ht-1
     """
-    up_moves = map(lambda idx: high_data[idx] - high_data[idx-1], range(1, len(high_data)))
+    up_moves = map(
+        lambda idx: high_data[idx] - high_data[idx-1],
+        range(1, len(high_data))
+        )
     return [np.nan] + up_moves
 
 
@@ -18,7 +21,10 @@ def calculate_down_moves(low_data):
     Down Move.
     DWNMOVE = Lt-1 - Lt
     """
-    down_moves = map(lambda idx: low_data[idx-1] - low_data[idx], range(1, len(low_data)))
+    down_moves = map(
+        lambda idx: low_data[idx-1] - low_data[idx],
+        range(1, len(low_data))
+        )
     return [np.nan] + down_moves
 
 
@@ -65,7 +71,11 @@ def positive_directional_index(close_data, high_data, low_data, period):
     Positive Directional Index (+DI)
     +DI = 100 * SMMA(+DM) / ATR
     """
-    pdi = 100 * smma(positive_directional_movement(high_data, low_data), period) / atr(close_data, period)
+    catch_errors.check_for_input_len_diff(close_data, high_data, low_data)
+    pdi = (100 *
+           smma(positive_directional_movement(high_data, low_data), period) /
+           atr(close_data, period)
+           )
     return pdi
 
 
@@ -74,7 +84,11 @@ def negative_directional_index(close_data, high_data, low_data, period):
     Negative Directional Index (-DI)
     -DI = 100 * SMMA(-DM) / ATR
     """
-    ndi = 100 * smma(negative_directional_movement(high_data, low_data), period) / atr(close_data, period)
+    catch_errors.check_for_input_len_diff(close_data, high_data, low_data)
+    ndi = (100 *
+           smma(negative_directional_movement(high_data, low_data), period) /
+           atr(close_data, period)
+           )
     return ndi
 
 
@@ -83,6 +97,15 @@ def average_directional_index(close_data, high_data, low_data, period):
     Average Directional Index.
     ADX = 100 * SMMA(abs((+DI - -DI) / (+DI + -DI)))
     """
-    avg_di = abs(positive_directional_index(close_data, high_data, low_data, period) - negative_directional_index(close_data, high_data, low_data, period) / (positive_directional_index(close_data, high_data, low_data, period) + negative_directional_index(close_data, high_data, low_data, period)))
+    avg_di = (abs(
+              positive_directional_index(
+                close_data, high_data, low_data, period) -
+              negative_directional_index(
+                close_data, high_data, low_data, period) /
+              (positive_directional_index(
+                close_data, high_data, low_data, period) +
+               negative_directional_index(
+                close_data, high_data, low_data, period)))
+              )
     adx = 100 * smma(avg_di, period)
     return adx

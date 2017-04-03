@@ -1,4 +1,3 @@
-import numpy as np
 import catch_errors
 from exponential_moving_average import exponential_moving_average as ema
 
@@ -11,5 +10,7 @@ def triple_exponential_moving_average(data, period):
     """
     catch_errors.check_for_period_error(data, period)
 
-    tema = (3 * ema(data, period) - (3 * ema(ema(data, period), period))) + ema(ema(ema(data, period), period), period)
+    tema = ((3 * ema(data, period) - (3 * ema(ema(data, period), period))) +
+            ema(ema(ema(data, period), period), period)
+            )
     return tema

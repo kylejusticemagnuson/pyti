@@ -60,5 +60,7 @@ class TestTypicalPrice(unittest.TestCase):
 
     def test_typical_price_invalid_data(self):
         self.close_data.append(1)
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as cm:
             typical_price.typical_price(self.close_data, self.high_data, self.low_data)
+        expected = ("Error: mismatched data lengths, check to ensure that all input data is the same length and valid")
+        self.assertEqual(str(cm.exception), expected)

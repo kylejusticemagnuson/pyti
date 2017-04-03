@@ -146,5 +146,7 @@ class TestDoubleSmoothedStochastic(unittest.TestCase):
 
     def test_dss_invalid_period(self):
         period = 128
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as cm:
             double_smoothed_stochastic.double_smoothed_stochastic(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

@@ -1,4 +1,3 @@
-import numpy as np
 import catch_errors
 from simple_moving_average import simple_moving_average as sma
 

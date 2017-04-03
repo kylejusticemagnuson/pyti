@@ -145,6 +145,7 @@ class TestSimpleMovingAverage(unittest.TestCase):
 
     def test_simple_moving_average_invalid_period(self):
         period = 128
-        # a period greater than the data length should raise an exception
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as cm:
             simple_moving_average.simple_moving_average(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

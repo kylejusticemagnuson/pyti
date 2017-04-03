@@ -448,8 +448,18 @@ class TestDirectionalIndicators(unittest.TestCase):
 
     def test_pdi_invalid_period(self):
         period = 128
-        with self.assertRaises(Exception):
-            directional_indicators.positive_directional_index(self.data, period)
+        with self.assertRaises(Exception) as cm:
+            directional_indicators.positive_directional_index(self.close_data, self.high_data, self.low_data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
+
+    def test_pdi_invalid_data(self):
+        period = 6
+        self.close_data.append(0)
+        with self.assertRaises(Exception) as cm:
+            directional_indicators.positive_directional_index(self.close_data, self.high_data, self.low_data, period)
+        expected = ("Error: mismatched data lengths, check to ensure that all input data is the same length and valid")
+        self.assertEqual(str(cm.exception), expected)
 
     def test_ndi_period_6(self):
         period = 6
@@ -468,8 +478,18 @@ class TestDirectionalIndicators(unittest.TestCase):
 
     def test_ndi_invalid_period(self):
         period = 128
-        with self.assertRaises(Exception):
-            directional_indicators.negative_directional_index(self.data, period)
+        with self.assertRaises(Exception) as cm:
+            directional_indicators.negative_directional_index(self.close_data, self.high_data, self.low_data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
+
+    def test_ndi_invalid_data(self):
+        period = 6
+        self.close_data.append(0)
+        with self.assertRaises(Exception) as cm:
+            directional_indicators.negative_directional_index(self.close_data, self.high_data, self.low_data, period)
+        expected = ("Error: mismatched data lengths, check to ensure that all input data is the same length and valid")
+        self.assertEqual(str(cm.exception), expected)
 
     def test_adx_period_6(self):
         period = 6
@@ -488,5 +508,15 @@ class TestDirectionalIndicators(unittest.TestCase):
 
     def test_adx_invalid_period(self):
         period = 128
-        with self.assertRaises(Exception):
-            directional_indicators.average_directional_index(self.data, period)
+        with self.assertRaises(Exception) as cm:
+            directional_indicators.average_directional_index(self.close_data, self.high_data, self.low_data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
+
+    def test_adx_invalid_data(self):
+        period = 6
+        self.close_data.append(0)
+        with self.assertRaises(Exception) as cm:
+            directional_indicators.average_directional_index(self.close_data, self.high_data, self.low_data, period)
+        expected = ("Error: mismatched data lengths, check to ensure that all input data is the same length and valid")
+        self.assertEqual(str(cm.exception), expected)

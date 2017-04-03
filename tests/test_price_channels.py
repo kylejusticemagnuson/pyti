@@ -213,5 +213,8 @@ class TestPriceChannels(unittest.TestCase):
 
     def test_lpc_invalid_period(self):
         period = 128
-        with self.assertRaises(Exception):
-            price_channels.lower_price_channel(self.data, period)
+        lower_percent = 6
+        with self.assertRaises(Exception) as cm:
+            price_channels.lower_price_channel(self.data, period, lower_percent)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

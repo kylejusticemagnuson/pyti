@@ -11,7 +11,14 @@ def chande_momentum_oscillator(close_data, period):
 
     close_data = np.array(close_data)
 
-    moving_period_diffs = map(lambda idx: map(lambda i: close_data[idx+1-period:idx+1][i] - close_data[idx+1-period:idx+1][i-1], range(1, len(close_data[idx+1-period:idx+1]))), range(0, len(close_data)))
+    moving_period_diffs = map(
+        lambda idx:
+            map(lambda i:
+                (close_data[idx+1-period:idx+1][i] -
+                 close_data[idx+1-period:idx+1][i-1]),
+                range(1, len(close_data[idx+1-period:idx+1]))),
+            range(0, len(close_data))
+        )
 
     sum_up = []
     sum_down = []

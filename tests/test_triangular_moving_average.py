@@ -142,3 +142,10 @@ class TestTriangularMovingAverage(unittest.TestCase):
         period = 10
         tma = triangular_moving_average.triangular_moving_average(self.data, period)
         np.testing.assert_array_equal(tma, self.tma_period_10_expected)
+
+    def test_triangular_moving_average_invalid_period(self):
+        period = 128
+        with self.assertRaises(Exception) as cm:
+            triangular_moving_average.triangular_moving_average(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

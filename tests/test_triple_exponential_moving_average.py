@@ -143,3 +143,10 @@ class TestTripleExponentialMovingAverage(unittest.TestCase):
         period = 10
         tema = triple_exponential_moving_average.triple_exponential_moving_average(self.data, period)
         np.testing.assert_array_equal(tema, self.tema_period_10_expected)
+
+    def test_triple_exponential_moving_average_invalid_period(self):
+        period = 128
+        with self.assertRaises(Exception) as cm:
+            triple_exponential_moving_average.triple_exponential_moving_average(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

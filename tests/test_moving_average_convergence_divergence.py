@@ -151,8 +151,18 @@ class TestStandardVariance(unittest.TestCase):
         macd = moving_average_convergence_divergence.moving_average_convergence_divergence(self.data, short_period, long_period)
         np.testing.assert_array_equal(macd, self.macd_period_10_period_20_expected)
 
-    def test_macd_invalid_period(self):
+    def test_macd_invalid_period_short(self):
         short_period = 128
         long_period = 1
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as cm:
             moving_average_convergence_divergence.moving_average_convergence_divergence(self.data, short_period, long_period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
+
+    def test_macd_invalid_period_long(self):
+        short_period = 1
+        long_period = 128
+        with self.assertRaises(Exception) as cm:
+            moving_average_convergence_divergence.moving_average_convergence_divergence(self.data, short_period, long_period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

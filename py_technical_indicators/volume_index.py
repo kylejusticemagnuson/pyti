@@ -3,7 +3,9 @@ import catch_errors
 
 
 def volume_index_helper(vi, idx, close_data, volume):
-    return vi[idx-1] + (((close_data[idx] - close_data[idx-1]) / close_data[idx-1]) * vi[idx-1])
+    return (vi[idx-1] + (((close_data[idx] - close_data[idx-1]) /
+            close_data[idx-1]) * vi[idx-1])
+            )
 
 
 def positive_volume_index(close_data, volume):

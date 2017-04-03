@@ -151,8 +151,18 @@ class TestPriceOscillator(unittest.TestCase):
         po = price_oscillator.price_oscillator(self.data, short_period, long_period)
         np.testing.assert_array_equal(po, self.po_period_10_period_20_expected)
 
-    def test_exponential_po_invalid_period(self):
-        period = 128
-        # a period greater than the data length should raise an exception
-        with self.assertRaises(Exception):
-            price_oscillator.price_oscillator(self.data, period)
+    def test_po_invalid_period_short(self):
+        short_period = 128
+        long_period = 20
+        with self.assertRaises(Exception) as cm:
+            price_oscillator.price_oscillator(self.data, short_period, long_period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
+
+    def test_po_invalid_period_long(self):
+        short_period = 10
+        long_period = 128
+        with self.assertRaises(Exception) as cm:
+            price_oscillator.price_oscillator(self.data, short_period, long_period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

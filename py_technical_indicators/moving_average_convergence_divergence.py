@@ -1,4 +1,3 @@
-import numpy as np
 import catch_errors
 from exponential_moving_average import exponential_moving_average as ema
 

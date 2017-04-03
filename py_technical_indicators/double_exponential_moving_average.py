@@ -1,5 +1,4 @@
-import numpy as np
-from py_technical_indicators import catch_errors
+import catch_errors
 from exponential_moving_average import exponential_moving_average as ema
 
 

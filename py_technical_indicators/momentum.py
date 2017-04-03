@@ -1,5 +1,5 @@
-import numpy as np
 import catch_errors
+from function_helper import fill_for_noncomputable_vals
 
 
 def momentum(data, period):
@@ -14,6 +14,5 @@ def momentum(data, period):
         data[idx] - data[idx+1-period],
         range(period-1, len(data))
         )
-    non_computable_values = np.repeat(np.nan, len(data) - len(momentum))
-    momentum = np.append(non_computable_values, momentum)
+    momentum = fill_for_noncomputable_vals(data, momentum)
     return momentum

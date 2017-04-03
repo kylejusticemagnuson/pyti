@@ -1,5 +1,5 @@
-import numpy as np
 import catch_errors
+from function_helper import fill_for_noncomputable_vals
 
 
 def weighted_moving_average(data, period):
@@ -21,7 +21,6 @@ def weighted_moving_average(data, period):
             )
         wma = sum(product) / k
         wmas.append(wma)
-    non_computable_values = np.repeat(np.nan, len(data) - len(wmas))
-    wmas = np.append(non_computable_values, wmas)
+    wmas = fill_for_noncomputable_vals(data, wmas)
 
     return wmas

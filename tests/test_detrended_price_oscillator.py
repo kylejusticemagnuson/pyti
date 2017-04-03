@@ -154,5 +154,7 @@ class TestDetrendedPriceOscillator(unittest.TestCase):
 
     def test_dop_invalid_period(self):
         period = 128
-        with self.assertRaises(Exception):
-            simple_moving_average.simple_moving_average(self.data, period)
+        with self.assertRaises(Exception) as cm:
+            detrended_price_oscillator.detrended_price_oscillator(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

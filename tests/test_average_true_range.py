@@ -150,5 +150,7 @@ class TestAverageTrueRange(unittest.TestCase):
 
     def test_average_true_range_invalid_period(self):
         period = 128
-        with self.assertRaises(Exception):
-            momentum.momentum(self.close_data, period)
+        with self.assertRaises(Exception) as cm:
+            average_true_range.average_true_range(self.close_data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

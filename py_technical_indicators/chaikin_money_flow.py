@@ -1,5 +1,6 @@
 import numpy as np
 import catch_errors
+from function_helper import fill_for_noncomputable_vals
 
 
 def chaikin_money_flow(close_data, high_data, low_data, volume, period):
@@ -7,7 +8,8 @@ def chaikin_money_flow(close_data, high_data, low_data, volume, period):
     Chaikin Money Flow.
     CMF = SUM[(((Cn - Ln) - (Hn - Cn)) / (Hn - Ln)) * V] / SUM(Vn)
     """
-    catch_errors.check_for_input_len_diff(close_data, high_data, low_data, volume)
+    catch_errors.check_for_input_len_diff(
+        close_data, high_data, low_data, volume)
     catch_errors.check_for_period_error(close_data, period)
 
     close_data = np.array(close_data)
@@ -16,9 +18,11 @@ def chaikin_money_flow(close_data, high_data, low_data, volume, period):
     volume = np.array(volume)
     cmf = map(
         lambda idx:
-        sum((((close_data[idx+1-period:idx+1] - low_data[idx+1-period:idx+1]) - (high_data[idx+1-period:idx+1] - close_data[idx+1-period:idx+1])) / (high_data[idx+1-period:idx+1] - low_data[idx+1-period:idx+1])) * volume[idx+1-period:idx+1]) / sum(volume[idx+1-period:idx+1]),
+        sum((((close_data[idx+1-period:idx+1] - low_data[idx+1-period:idx+1]) -
+            (high_data[idx+1-period:idx+1] - close_data[idx+1-period:idx+1])) /
+            (high_data[idx+1-period:idx+1] - low_data[idx+1-period:idx+1])) *
+            volume[idx+1-period:idx+1]) / sum(volume[idx+1-period:idx+1]),
         range(period-1, len(close_data))
         )
-    non_computable_values = np.repeat(np.nan, len(close_data) - len(cmf))
-    cmf = np.append(non_computable_values, cmf)
+    cmf = fill_for_noncomputable_vals(close_data, cmf)
     return cmf

@@ -1,5 +1,6 @@
 import numpy as np
 import catch_errors
+from function_helper import fill_for_noncomputable_vals
 
 
 def conversion_base_line_helper(data, period):
@@ -9,12 +10,12 @@ def conversion_base_line_helper(data, period):
     catch_errors.check_for_period_error(data, period)
     cblh = map(
         lambda idx:
-        (np.max(data[idx+1-period:idx+1]) - np.min(data[idx+1-period:idx+1])) / 2,
+        (np.max(data[idx+1-period:idx+1]) -
+            np.min(data[idx+1-period:idx+1])) / 2,
         range(period-1, len(data))
         )
 
-    non_computable_values = np.repeat(np.nan, len(data) - len(cblh))
-    cblh = np.append(non_computable_values, cblh)
+    cblh = fill_for_noncomputable_vals(data, cblh)
     return cblh
 
 
@@ -52,8 +53,8 @@ def senkou_a(data):
     """
     sa = (tenkansen(data) + kijunsen(data)) / 2
     # shift forward
-    non_computable_values = np.repeat(np.nan, 26)
-    sa = np.append(non_computable_values, sa)
+    shift_by = np.repeat(np.nan, 26)
+    sa = np.append(shift_by, sa)
     return sa
 
 
@@ -63,6 +64,6 @@ def senkou_b(data, period=52):
     (H + L) / 2  :: default period=52 :: shifted forward 26 bars
     """
     sb = conversion_base_line_helper(data, period)
-    non_computable_values = np.repeat(np.nan, 26)
-    sb = np.append(non_computable_values, sb)
+    shift_by = np.repeat(np.nan, 26)
+    sb = np.append(shift_by, sb)
     return sb

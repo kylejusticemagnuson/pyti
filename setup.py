@@ -13,6 +13,7 @@ setup(
     version='0.1.0',
 
     description='Library containing various technical indicator functions',
+    long_discription=long_discription,
 
     url='https://github.com/kylejusticemagnuson/py-technical-indicators',
 
@@ -38,7 +39,7 @@ setup(
 
     keywords='financial technical indicator functions',
 
-    packages=find_packages(exclude=['docs', 'tests']),
+    packages=find_packages(exclude=['tests']),
 
     install_requires=['numpy'],
 

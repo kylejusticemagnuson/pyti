@@ -157,5 +157,7 @@ class TestChandeMomentumOscillator(unittest.TestCase):
 
     def test_cmo_invalid_period(self):
         period = 128
-        with self.assertRaises(Exception):
-            chande_momentum_oscillator.chande_momentum_oscillator(self.data, period)
+        with self.assertRaises(Exception) as cm:
+            chande_momentum_oscillator.chande_momentum_oscillator(self.close_data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

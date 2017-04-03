@@ -154,6 +154,7 @@ class TestRelativeStrengthIndex(unittest.TestCase):
 
     def test_relative_strength_index_invalid_period(self):
         period = 128
-        # a period greater than the data length should raise an exception
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as cm:
             relative_strength_index.relative_strength_index(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

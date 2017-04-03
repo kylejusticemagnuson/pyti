@@ -1,6 +1,6 @@
 import numpy as np
 import catch_errors
-from simple_moving_average import simple_moving_average as sma
+from function_helper import fill_for_noncomputable_vals
 
 
 def standard_variance(data, period):
@@ -15,7 +15,6 @@ def standard_variance(data, period):
         np.var(data[idx+1-period:idx+1], ddof=1),
         range(period-1, len(data))
         )
-    non_computable_values = np.repeat(np.nan, len(data) - len(sv))
-    sv = np.append(non_computable_values, sv)
+    sv = fill_for_noncomputable_vals(data, sv)
 
     return sv

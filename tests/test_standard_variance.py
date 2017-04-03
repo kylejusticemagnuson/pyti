@@ -155,5 +155,7 @@ class TestStandardVariance(unittest.TestCase):
 
     def test_standard_variance_invalid_period(self):
         period = 128
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as cm:
             standard_variance.standard_variance(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

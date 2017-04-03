@@ -155,6 +155,7 @@ class TestRateOfChange(unittest.TestCase):
 
     def test_roc_invalid_period(self):
         period = 128
-        # a period greater than the data length should raise an exception
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as cm:
             rate_of_change.rate_of_change(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

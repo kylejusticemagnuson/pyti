@@ -1,5 +1,5 @@
-import numpy as np
 import catch_errors
+from function_helper import fill_for_noncomputable_vals
 
 
 def rate_of_change(data, period):
@@ -13,9 +13,9 @@ def rate_of_change(data, period):
 
     rocs = map(
         lambda idx:
-        ((data[idx] - data[idx - (period - 1)]) / data[idx - (period - 1)]) * 100,
+        ((data[idx] - data[idx - (period - 1)]) /
+         data[idx - (period - 1)]) * 100,
         range(period - 1, len(data))
         )
-    non_computable_values = np.repeat(np.nan, len(data) - len(rocs))
-    rocs = np.append(non_computable_values, rocs)
+    rocs = fill_for_noncomputable_vals(data, rocs)
     return rocs

@@ -142,5 +142,7 @@ class TestSmoothedMovingAverage(unittest.TestCase):
 
     def test_smma_invalid_period(self):
         period = 128
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as cm:
             smoothed_moving_average.smoothed_moving_average(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

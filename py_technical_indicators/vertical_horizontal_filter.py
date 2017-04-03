@@ -1,5 +1,6 @@
 import numpy as np
 import catch_errors
+from function_helper import fill_for_noncomputable_vals
 
 
 def vertical_horizontal_filter(data, period):
@@ -11,7 +12,8 @@ def vertical_horizontal_filter(data, period):
 
     vhf = map(
         lambda idx:
-        abs(np.max(data[idx+1-period:idx+1]) - np.min(data[idx+1-period:idx+1])) /
+        abs(np.max(data[idx+1-period:idx+1]) -
+            np.min(data[idx+1-period:idx+1])) /
         sum(map(
             lambda i:
             abs(data[idx+1-period:idx+1][i] - data[idx+1-period:idx+1][i-1]),
@@ -19,6 +21,5 @@ def vertical_horizontal_filter(data, period):
         range(period - 1, len(data))
         )
 
-    non_computable_values = np.repeat(np.nan, len(data) - len(vhf))
-    vhf = np.append(non_computable_values, vhf)
+    vhf = fill_for_noncomputable_vals(data, vhf)
     return vhf

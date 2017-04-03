@@ -77,3 +77,17 @@ class TestAroon(unittest.TestCase):
         period = 14
         aroon_down = aroon.aroon_down(self.data, period)
         np.testing.assert_array_equal(aroon_down, self.aroon_down_period_14)
+
+    def test_aroon_up_invalid_period(self):
+        period = 128
+        with self.assertRaises(Exception) as cm:
+            aroon.aroon_up(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
+
+    def test_aroon_down_invalid_period(self):
+        period = 128
+        with self.assertRaises(Exception) as cm:
+            aroon.aroon_down(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

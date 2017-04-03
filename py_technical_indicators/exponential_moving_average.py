@@ -1,5 +1,5 @@
-import numpy as np
-from py_technical_indicators import catch_errors
+import catch_errors
+from function_helper import fill_for_noncomputable_vals
 
 
 def exponential_moving_average(data, period):
@@ -12,22 +12,22 @@ def exponential_moving_average(data, period):
             where: w = 2 / (N + 1)
     """
     catch_errors.check_for_period_error(data, period)
-    exponential_moving_averages = map(
+    emas = map(
         lambda idx:
-        exponential_moving_average_helper(data[idx - period + 1:idx + 1], period),
+        exponential_moving_average_helper(
+            data[idx - period + 1:idx + 1], period),
         range(period - 1, len(data))
         )
-    non_computable_values = np.repeat(np.nan, len(data) - len(exponential_moving_averages))
-    exponential_moving_averages = np.append(non_computable_values, exponential_moving_averages)
-    return exponential_moving_averages
+    emas = fill_for_noncomputable_vals(data, emas)
+    return emas
 
 
 def exponential_moving_average_helper(data, period):
     w = 2 / float(period + 1)
-    exponential_moving_average_top = data[period - 1]
-    exponential_moving_average_bottom = 1
+    ema_top = data[period - 1]
+    ema_bottom = 1
     for idx in range(1, period):  # idx 1 to n
-        exponential_moving_average_top += ((1 - w)**idx) * data[period - 1 - idx]
-        exponential_moving_average_bottom += (1 - w)**idx
-    exponential_moving_average = exponential_moving_average_top / exponential_moving_average_bottom
-    return exponential_moving_average
+        ema_top += ((1 - w)**idx) * data[period - 1 - idx]
+        ema_bottom += (1 - w)**idx
+    ema = ema_top / ema_bottom
+    return ema

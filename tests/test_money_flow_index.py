@@ -156,5 +156,15 @@ class TestMoneyFlow(unittest.TestCase):
 
     def test_money_flow_index_invalid_period(self):
         period = 128
-        with self.assertRaises(Exception):
-            true_range.true_range(self.close_data, period)
+        with self.assertRaises(Exception) as cm:
+            money_flow_index.money_flow_index(self.close_data, self.high_data, self.low_data, self.volume, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
+
+    def test_money_flow_index_invalid_data(self):
+        period = 6
+        self.close_data.append(0)
+        with self.assertRaises(Exception) as cm:
+            money_flow_index.money_flow_index(self.close_data, self.high_data, self.low_data, self.volume, period)
+        expected = ("Error: mismatched data lengths, check to ensure that all input data is the same length and valid")
+        self.assertEqual(str(cm.exception), expected)

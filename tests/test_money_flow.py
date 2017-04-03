@@ -61,5 +61,7 @@ class TestAccumulationDistribution(unittest.TestCase):
 
     def test_money_flow_invalid_data(self):
         self.close_data.append(1)
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as cm:
             money_flow.money_flow(self.close_data, self.high_data, self.low_data, self.volume)
+        expected = ("Error: mismatched data lengths, check to ensure that all input data is the same length and valid")
+        self.assertEqual(str(cm.exception), expected)

@@ -158,5 +158,15 @@ class TestChaikinMoneyFlow(unittest.TestCase):
 
     def test_cmf_invalid_period(self):
         period = 128
-        with self.assertRaises(Exception):
-            chaikin_money_flow.chaikin_money_flow(self.close_data, period)
+        with self.assertRaises(Exception) as cm:
+            chaikin_money_flow.chaikin_money_flow(self.close_data, self.high_data, self.low_data, self.volume, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
+
+    def test_cmf_invalid_data(self):
+        self.close_data.append(1)
+        period = 6
+        with self.assertRaises(Exception) as cm:
+            chaikin_money_flow.chaikin_money_flow(self.close_data, self.high_data, self.low_data, self.volume, period)
+        expected = ("Error: mismatched data lengths, check to ensure that all input data is the same length and valid")
+        self.assertEqual(str(cm.exception), expected)

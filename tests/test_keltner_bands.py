@@ -189,17 +189,77 @@ class TestKeltnerBands(unittest.TestCase):
         bw = keltner_bands.band_width(self.high_data, self.low_data, period)
         np.testing.assert_array_equal(bw, self.bandwidth_period_6_expected)
 
+    def test_bandwidth_invalid_period(self):
+        period = 128
+        with self.assertRaises(Exception) as cm:
+            keltner_bands.band_width(self.high_data, self.low_data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
+
+    def test_adx_invalid_data(self):
+        period = 6
+        self.high_data.append(0)
+        with self.assertRaises(Exception) as cm:
+            keltner_bands.band_width(self.high_data, self.low_data, period)
+        expected = ("Error: mismatched data lengths, check to ensure that all input data is the same length and valid")
+        self.assertEqual(str(cm.exception), expected)
+
     def test_center_band_period_6(self):
         period = 6
         cb = keltner_bands.center_band(self.close_data, self.high_data, self.low_data, period)
         np.testing.assert_array_equal(cb, self.center_band_period_6_expected)
+
+    def test_center_band_invalid_period(self):
+        period = 128
+        with self.assertRaises(Exception) as cm:
+            keltner_bands.center_band(self.close_data, self.high_data, self.low_data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
+
+    def test_center_band_invalid_data(self):
+        period = 6
+        self.high_data.append(0)
+        with self.assertRaises(Exception) as cm:
+            keltner_bands.center_band(self.close_data, self.high_data, self.low_data, period)
+        expected = ("Error: mismatched data lengths, check to ensure that all input data is the same length and valid")
+        self.assertEqual(str(cm.exception), expected)
 
     def test_upper_band_period_6(self):
         period = 6
         ub = keltner_bands.upper_band(self.close_data, self.high_data, self.low_data, period)
         np.testing.assert_array_equal(ub, self.upper_band_period_6_expected)
 
+    def test_upper_band_invalid_period(self):
+        period = 128
+        with self.assertRaises(Exception) as cm:
+            keltner_bands.upper_band(self.close_data, self.high_data, self.low_data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
+
+    def test_upper_band_invalid_data(self):
+        period = 6
+        self.high_data.append(0)
+        with self.assertRaises(Exception) as cm:
+            keltner_bands.upper_band(self.close_data, self.high_data, self.low_data, period)
+        expected = ("Error: mismatched data lengths, check to ensure that all input data is the same length and valid")
+        self.assertEqual(str(cm.exception), expected)
+
     def test_lower_band_period_6(self):
         period = 6
         lb = keltner_bands.lower_band(self.close_data, self.high_data, self.low_data, period)
         np.testing.assert_array_equal(lb, self.lower_band_period_6_expected)
+
+    def test_lower_band_invalid_period(self):
+        period = 128
+        with self.assertRaises(Exception) as cm:
+            keltner_bands.lower_band(self.close_data, self.high_data, self.low_data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
+
+    def test_lower_band_invalid_data(self):
+        period = 6
+        self.high_data.append(0)
+        with self.assertRaises(Exception) as cm:
+            keltner_bands.lower_band(self.close_data, self.high_data, self.low_data, period)
+        expected = ("Error: mismatched data lengths, check to ensure that all input data is the same length and valid")
+        self.assertEqual(str(cm.exception), expected)

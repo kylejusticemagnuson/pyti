@@ -154,5 +154,7 @@ class TestLinearWeightedMovingAverage(unittest.TestCase):
 
     def test_lwma_invalid_period(self):
         period = 128
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as cm:
             linear_weighted_moving_average.linear_weighted_moving_average(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

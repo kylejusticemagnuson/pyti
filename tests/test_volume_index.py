@@ -106,8 +106,10 @@ class TestVolumeIndex(unittest.TestCase):
 
     def test_pvi_invalid_data(self):
         self.close_data.append(1)
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as cm:
             volume_index.positive_volume_index(self.close_data, self.volume)
+        expected = ("Error: mismatched data lengths, check to ensure that all input data is the same length and valid")
+        self.assertEqual(str(cm.exception), expected)
 
     def test_nvi(self):
         nvi = volume_index.negative_volume_index(self.close_data, self.volume)
@@ -115,5 +117,7 @@ class TestVolumeIndex(unittest.TestCase):
 
     def test_nvi_invalid_data(self):
         self.close_data.append(1)
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as cm:
             volume_index.negative_volume_index(self.close_data, self.volume)
+        expected = ("Error: mismatched data lengths, check to ensure that all input data is the same length and valid")
+        self.assertEqual(str(cm.exception), expected)

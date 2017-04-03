@@ -266,34 +266,74 @@ class TestBollingerBands(unittest.TestCase):
         0.25008520904313003, 0.015916940699370632, 0.042754393107139112,
         0.2073341509427761, 0.22254729716543903, 0.41858526202755941]
 
-
-
     def test_upper_bollinger_bands_period_6(self):
         period = 6
         upper_bb = bollinger_bands.upper_bollinger_band(self.data, period)
         np.testing.assert_array_equal(upper_bb, self.upper_bb_period_6_expected)
+
+    def test_upper_bollinger_bands_invalid_period(self):
+        period = 128
+        with self.assertRaises(Exception) as cm:
+            bollinger_bands.upper_bollinger_band(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
 
     def test_middle_bollinger_bands_period_6(self):
         period = 6
         middle_bb = bollinger_bands.middle_bollinger_band(self.data, period)
         np.testing.assert_array_equal(middle_bb, self.middle_bb_period_6_expected)
 
+    def test_middle_bollinger_bands_invalid_period(self):
+        period = 128
+        with self.assertRaises(Exception) as cm:
+            bollinger_bands.middle_bollinger_band(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
+
     def test_lower_bollinger_bands_period_6(self):
         period = 6
         lower_bb = bollinger_bands.lower_bollinger_band(self.data, period)
         np.testing.assert_array_equal(lower_bb, self.lower_bb_period_6_expected)
+
+    def test_lower_bollinger_bands_invalid_period(self):
+        period = 128
+        with self.assertRaises(Exception) as cm:
+            bollinger_bands.lower_bollinger_band(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
 
     def test_bandwidth_period_6(self):
         period = 6
         bb_bandwidth = bollinger_bands.bandwidth(self.data, period)
         np.testing.assert_array_equal(bb_bandwidth, self.bb_bandwidth_period_6_expected)
 
+    def test_bandwidth_invalid_period(self):
+        period = 128
+        with self.assertRaises(Exception) as cm:
+            bollinger_bands.bandwidth(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
+
     def test_range_period_6(self):
         period = 6
         bb_range = bollinger_bands.bb_range(self.data, period)
         np.testing.assert_array_equal(bb_range, self.bb_range_period_6_expected)
 
+    def test_range_period_invalid_period(self):
+        period = 128
+        with self.assertRaises(Exception) as cm:
+            bollinger_bands.bb_range(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)
+
     def test_percent_bandwidth_period_6(self):
         period = 6
         bb_percent_bandwidth = bollinger_bands.percent_bandwidth(self.data, period)
         np.testing.assert_array_equal(bb_percent_bandwidth, self.bb_percent_bandwidth_period_6_expected)
+
+    def test_percent_bandwidth_invalid_period(self):
+        period = 128
+        with self.assertRaises(Exception) as cm:
+            bollinger_bands.percent_bandwidth(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

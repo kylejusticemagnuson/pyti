@@ -1,5 +1,6 @@
 import numpy as np
 import warnings
+from function_helper import fill_for_noncomputable_vals
 
 from py_technical_indicators import catch_errors
 
@@ -15,10 +16,10 @@ def simple_moving_average(data, period):
     # supressed
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", category=RuntimeWarning)
-        simple_moving_averages = map(
-            lambda idx: np.mean(data[idx-(period-1):idx+1]),
+        sma = map(
+            lambda idx:
+            np.mean(data[idx-(period-1):idx+1]),
             range(0, len(data))
             )
-    non_computable_values = np.repeat(np.nan, len(data) - len(simple_moving_averages))
-    simple_moving_averages = np.append(non_computable_values, simple_moving_averages)
-    return simple_moving_averages
+    sma = fill_for_noncomputable_vals(data, sma)
+    return sma

@@ -1,4 +1,3 @@
-import numpy as np
 from standard_deviation import standard_deviation as sd
 from standard_variance import standard_variance as sv
 

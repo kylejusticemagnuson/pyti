@@ -150,5 +150,7 @@ class TestAverageTrueRangePercent(unittest.TestCase):
 
     def test_atrp_invalid_period(self):
         period = 128
-        with self.assertRaises(Exception):
-            average_true_range_percent.average_true_range_percent(self.data, period)
+        with self.assertRaises(Exception) as cm:
+            average_true_range_percent.average_true_range_percent(self.close_data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

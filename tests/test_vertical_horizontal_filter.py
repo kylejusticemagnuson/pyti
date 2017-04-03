@@ -138,5 +138,7 @@ class TestVerticalHorizontalFilter(unittest.TestCase):
 
     def test_vertical_horizontal_filter_invalid_period(self):
         period = 128
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as cm:
             vertical_horizontal_filter.vertical_horizontal_filter(self.data, period)
+        expected = "Error: data_len < period"
+        self.assertEqual(str(cm.exception), expected)

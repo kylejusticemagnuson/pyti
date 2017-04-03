@@ -9,5 +9,7 @@ def hull_moving_average(data, period):
     HMA = WMA(2*WMA(n/2) - WMA(n)), sqrt(n)
     """
     catch_errors.check_for_period_error(data, period)
-    hma = wma(2 * wma(data, int(period/2)) - wma(data, period), int(np.sqrt(period)))
+    hma = wma(
+        2 * wma(data, int(period/2)) - wma(data, period), int(np.sqrt(period))
+        )
     return hma
