@@ -69,3 +69,5 @@ Volume Index
   -Negative Volume Index
 Weighted Moving Average
 ```
+
+To use this library on AWS infrastructure such as Lambda, you will need to use the https://github.com/vitolimandibhrata/aws-lambda-numpy build of numpy.

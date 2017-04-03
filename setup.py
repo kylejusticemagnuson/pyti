@@ -13,7 +13,6 @@ setup(
     version='0.1.0',
 
     description='Library containing various technical indicator functions',
-    long_discription=long_discription,
 
     url='https://github.com/kylejusticemagnuson/py-technical-indicators',
 
