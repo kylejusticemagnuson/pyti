@@ -1,7 +1,7 @@
 import numpy as np
-import catch_errors
-from smoothed_moving_average import smoothed_moving_average as smma
-from average_true_range import average_true_range as atr
+from py_technical_indicators import catch_errors
+from py_technical_indicators.smoothed_moving_average import smoothed_moving_average as smma
+from py_technical_indicators.average_true_range import average_true_range as atr
 
 
 def calculate_up_moves(high_data):

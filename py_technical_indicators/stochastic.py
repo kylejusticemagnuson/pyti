@@ -1,7 +1,7 @@
 import numpy as np
-import catch_errors
-from function_helper import fill_for_noncomputable_vals
-from simple_moving_average import simple_moving_average as sma
+from py_technical_indicators import catch_errors
+from py_technical_indicators.function_helper import fill_for_noncomputable_vals
+from py_technical_indicators.simple_moving_average import simple_moving_average as sma
 
 
 def percent_k(data, period):

@@ -1,5 +1,5 @@
 import numpy as np
-import catch_errors
+from py_technical_indicators import catch_errors
 
 
 def accumulation_distribution(close_data, high_data, low_data, volume):

@@ -1,5 +1,5 @@
-import catch_errors
-from function_helper import fill_for_noncomputable_vals
+from py_technical_indicators import catch_errors
+from py_technical_indicators.function_helper import fill_for_noncomputable_vals
 
 
 def exponential_moving_average(data, period):

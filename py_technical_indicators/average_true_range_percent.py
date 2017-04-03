@@ -1,6 +1,6 @@
 import numpy as np
-import catch_errors
-from average_true_range import average_true_range as atr
+from py_technical_indicators import catch_errors
+from py_technical_indicators.average_true_range import average_true_range as atr
 
 
 def average_true_range_percent(close_data, period):

@@ -1,5 +1,5 @@
 import numpy as np
-from true_range import true_range
+from py_technical_indicators.true_range import true_range
 
 
 def average_true_range(close_data, period):

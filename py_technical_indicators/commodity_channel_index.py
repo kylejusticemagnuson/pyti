@@ -1,7 +1,7 @@
 import numpy as np
-import catch_errors
-from typical_price import typical_price
-from simple_moving_average import simple_moving_average as sma
+from py_technical_indicators import catch_errors
+from py_technical_indicators.typical_price import typical_price
+from py_technical_indicators.simple_moving_average import simple_moving_average as sma
 
 
 def commodity_channel_index(close_data, high_data, low_data, period):

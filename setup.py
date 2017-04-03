@@ -4,13 +4,13 @@ from os import path
 here = path.abspath(path.dirname(__file__))
 
 setup(
-    name="py-technical-indicators",
+    name="pyti",
 
     version='0.1.0',
 
     description='Library containing various technical indicator functions',
 
-    url='https://github.com/kylejusticemagnuson/py-technical-indicators',
+    url='https://github.com/kylejusticemagnuson/pyti',
 
     author='Kyle Justice Magnuson',
     author_email='kyle@collectiveidea.com',

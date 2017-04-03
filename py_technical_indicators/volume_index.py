@@ -1,5 +1,5 @@
 import numpy as np
-import catch_errors
+from py_technical_indicators import catch_errors
 
 
 def volume_index_helper(vi, idx, close_data, volume):

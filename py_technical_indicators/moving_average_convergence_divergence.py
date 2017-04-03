@@ -1,5 +1,5 @@
-import catch_errors
-from exponential_moving_average import exponential_moving_average as ema
+from py_technical_indicators import catch_errors
+from py_technical_indicators.exponential_moving_average import exponential_moving_average as ema
 
 
 def moving_average_convergence_divergence(data, short_period, long_period):

@@ -1,5 +1,5 @@
-import catch_errors
-from typical_price import typical_price as tp
+from py_technical_indicators import catch_errors
+from py_technical_indicators.typical_price import typical_price as tp
 
 
 def money_flow(close_data, high_data, low_data, volume):

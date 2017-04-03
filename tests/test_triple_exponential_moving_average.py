@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 
-from sample_data import SampleData
+from tests.sample_data import SampleData
 from py_technical_indicators import triple_exponential_moving_average
 
 
