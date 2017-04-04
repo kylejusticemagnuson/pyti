@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_technical_indicators import standard_variance
+from py_ti import standard_variance
 
 
 class TestStandardVariance(unittest.TestCase):

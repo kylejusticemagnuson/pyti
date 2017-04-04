@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_technical_indicators import simple_moving_average
+from py_ti import simple_moving_average
 
 
 class TestSimpleMovingAverage(unittest.TestCase):

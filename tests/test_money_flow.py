@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_technical_indicators import money_flow
+from py_ti import money_flow
 
 
 class TestAccumulationDistribution(unittest.TestCase):

@@ -10,7 +10,7 @@ setup(
     version='0.1.0',
 
     description='Technical Indicator Library',
-    long_description="This library contains various financial technical"
+    long_description="This library contains various financial technical "
                      "indicators that can be used to analyze financial data.",
 
     url='https://github.com/kylejusticemagnuson/pyti',
@@ -24,7 +24,7 @@ setup(
         'Development Status :: 4 - Beta',
 
         'Intended Audience :: Developers',
-        'Topic :: Software Development :: Financial Tools',
+        'Topic :: Software Development',
 
         'License :: OSI Approved :: MIT License',
 

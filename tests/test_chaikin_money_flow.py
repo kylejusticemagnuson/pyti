@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_technical_indicators import chaikin_money_flow
+from py_ti import chaikin_money_flow
 
 
 class TestChaikinMoneyFlow(unittest.TestCase):

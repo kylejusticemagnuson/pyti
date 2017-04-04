@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_technical_indicators import rate_of_change
+from py_ti import rate_of_change
 
 
 class TestRateOfChange(unittest.TestCase):

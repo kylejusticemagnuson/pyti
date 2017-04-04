@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_technical_indicators import moving_average_convergence_divergence
+from py_ti import moving_average_convergence_divergence
 
 
 class TestStandardVariance(unittest.TestCase):

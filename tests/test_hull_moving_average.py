@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_technical_indicators import hull_moving_average
+from py_ti import hull_moving_average
 
 
 class TestHullMovingAverage(unittest.TestCase):

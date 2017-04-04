@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_technical_indicators import average_true_range
+from py_ti import average_true_range
 
 
 class TestAverageTrueRange(unittest.TestCase):

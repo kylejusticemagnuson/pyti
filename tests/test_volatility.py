@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_technical_indicators import volatility
+from py_ti import volatility
 
 
 class TestVolatility(unittest.TestCase):

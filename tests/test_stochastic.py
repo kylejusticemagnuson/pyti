@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_technical_indicators import stochastic
+from py_ti import stochastic
 
 
 class TestStochastic(unittest.TestCase):

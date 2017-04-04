@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_technical_indicators import weighted_moving_average
+from py_ti import weighted_moving_average
 
 
 class TestWeightedMovingAverage(unittest.TestCase):

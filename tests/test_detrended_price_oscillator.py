@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_technical_indicators import detrended_price_oscillator
+from py_ti import detrended_price_oscillator
 
 
 class TestDetrendedPriceOscillator(unittest.TestCase):

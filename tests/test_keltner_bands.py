@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_technical_indicators import keltner_bands
+from py_ti import keltner_bands
 
 
 class TestKeltnerBands(unittest.TestCase):

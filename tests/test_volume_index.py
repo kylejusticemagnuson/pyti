@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_technical_indicators import volume_index
+from py_ti import volume_index
 
 
 class TestVolumeIndex(unittest.TestCase):
