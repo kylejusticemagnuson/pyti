@@ -42,6 +42,10 @@ Momentum
 Money Flow
 Money Flow Index
 Moving Average Convergence Divergence
+Moving Average Envelope
+  -Upper Band
+  -Center Band
+  -Lower Band
 Negative Directional Index (-DI)
 Negative Directional Movement (-DM)
 Positive Directional Index (+DI)
