@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import moving_average_envelope
+from pyti import moving_average_envelope
 
 
 class TestMovingAverageEnvelope(unittest.TestCase):

@@ -1,4 +1,4 @@
-from py_ti.simple_moving_average import simple_moving_average as sma
+from pyti.simple_moving_average import simple_moving_average as sma
 
 
 def center_band(data, period):
