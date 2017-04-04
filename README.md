@@ -2,7 +2,7 @@
 
 This library contains various financial technical indicators that can be used to analyze financial data.
 
-The Complete List of Indicators in this Library:
+The complete list of indicators in this library:
 ```
 Accumulation/Distribution
 Aroon
