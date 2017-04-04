@@ -1,6 +1,8 @@
 import numpy as np
 from py_technical_indicators import catch_errors
-from py_technical_indicators.simple_moving_average import simple_moving_average as sma
+from py_technical_indicators.simple_moving_average import (
+    simple_moving_average as sma
+    )
 from py_technical_indicators.typical_price import typical_price
 
 

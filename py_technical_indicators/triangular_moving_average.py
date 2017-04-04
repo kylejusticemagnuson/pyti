@@ -1,5 +1,7 @@
 from py_technical_indicators import catch_errors
-from py_technical_indicators.simple_moving_average import simple_moving_average as sma
+from py_technical_indicators.simple_moving_average import (
+    simple_moving_average as sma
+    )
 
 
 def triangular_moving_average(data, period):

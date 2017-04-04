@@ -1,6 +1,8 @@
 import numpy as np
 from py_technical_indicators import catch_errors
-from py_technical_indicators.weighted_moving_average import weighted_moving_average as wma
+from py_technical_indicators.weighted_moving_average import (
+    weighted_moving_average as wma
+    )
 
 
 def hull_moving_average(data, period):

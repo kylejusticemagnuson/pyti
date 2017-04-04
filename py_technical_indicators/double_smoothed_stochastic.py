@@ -1,7 +1,9 @@
 import numpy as np
 from py_technical_indicators import catch_errors
 from py_technical_indicators.function_helper import fill_for_noncomputable_vals
-from py_technical_indicators.exponential_moving_average import exponential_moving_average as ema
+from py_technical_indicators.exponential_moving_average import (
+    exponential_moving_average as ema
+    )
 
 
 def double_smoothed_stochastic(data, period):
