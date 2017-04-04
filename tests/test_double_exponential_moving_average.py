@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import double_exponential_moving_average
+from pyti import double_exponential_moving_average
 
 
 class TestDoubleExponentialMovingAverage(unittest.TestCase):

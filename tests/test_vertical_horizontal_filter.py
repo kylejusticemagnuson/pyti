@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import vertical_horizontal_filter
+from pyti import vertical_horizontal_filter
 
 
 class TestVerticalHorizontalFilter(unittest.TestCase):

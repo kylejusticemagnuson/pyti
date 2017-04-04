@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import aroon
+from pyti import aroon
 
 
 class TestAroon(unittest.TestCase):

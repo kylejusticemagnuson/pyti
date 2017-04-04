@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import double_smoothed_stochastic
+from pyti import double_smoothed_stochastic
 
 
 class TestDoubleSmoothedStochastic(unittest.TestCase):

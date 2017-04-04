@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import ichimoku_cloud
+from pyti import ichimoku_cloud
 
 
 class TestIchimokuCloud(unittest.TestCase):

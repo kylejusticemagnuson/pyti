@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import exponential_moving_average
+from pyti import exponential_moving_average
 
 
 class TestExponentialMovingAverage(unittest.TestCase):
