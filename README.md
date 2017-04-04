@@ -18,6 +18,7 @@ Bollinger Bands
   -Bandwidth
   -Percent Bandwidth
   -Range
+  -%B
 Chaikin Money Flow
 Chande Momentum Oscillator
 Commodity Channel Index
