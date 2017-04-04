@@ -1,5 +1,5 @@
-from py_ti import catch_errors
-from py_ti.function_helper import fill_for_noncomputable_vals
+from pyti import catch_errors
+from pyti.function_helper import fill_for_noncomputable_vals
 
 
 def rate_of_change(data, period):

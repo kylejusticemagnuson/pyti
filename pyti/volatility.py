@@ -1,5 +1,5 @@
-from py_ti.standard_deviation import standard_deviation as sd
-from py_ti.standard_variance import standard_variance as sv
+from pyti.standard_deviation import standard_deviation as sd
+from pyti.standard_variance import standard_variance as sv
 
 
 def volatility(data, period):

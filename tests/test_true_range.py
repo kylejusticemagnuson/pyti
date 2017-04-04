@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import true_range
+from pyti import true_range
 
 
 class TestTrueRange(unittest.TestCase):

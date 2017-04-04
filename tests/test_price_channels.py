@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import price_channels
+from pyti import price_channels
 
 
 class TestPriceChannels(unittest.TestCase):

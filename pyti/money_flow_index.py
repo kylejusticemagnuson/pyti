@@ -1,9 +1,9 @@
 import numpy as np
 import warnings
-from py_ti import catch_errors
-from py_ti.function_helper import fill_for_noncomputable_vals
-from py_ti.typical_price import typical_price
-from py_ti.money_flow import money_flow
+from pyti import catch_errors
+from pyti.function_helper import fill_for_noncomputable_vals
+from pyti.typical_price import typical_price
+from pyti.money_flow import money_flow
 
 
 def money_flow_index(close_data, high_data, low_data, volume, period):

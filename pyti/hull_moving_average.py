@@ -1,6 +1,6 @@
 import numpy as np
-from py_ti import catch_errors
-from py_ti.weighted_moving_average import (
+from pyti import catch_errors
+from pyti.weighted_moving_average import (
     weighted_moving_average as wma
     )
 

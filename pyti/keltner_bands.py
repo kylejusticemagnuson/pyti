@@ -1,9 +1,9 @@
 import numpy as np
-from py_ti import catch_errors
-from py_ti.simple_moving_average import (
+from pyti import catch_errors
+from pyti.simple_moving_average import (
     simple_moving_average as sma
     )
-from py_ti.typical_price import typical_price
+from pyti.typical_price import typical_price
 
 
 def band_width(high_data, low_data, period):

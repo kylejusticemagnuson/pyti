@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import money_flow_index
+from pyti import money_flow_index
 
 
 class TestMoneyFlow(unittest.TestCase):

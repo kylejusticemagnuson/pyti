@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import standard_deviation
+from pyti import standard_deviation
 
 
 class TestStandardDeviation(unittest.TestCase):

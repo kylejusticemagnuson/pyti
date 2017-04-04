@@ -1,6 +1,6 @@
 import numpy as np
 import warnings
-from py_ti import catch_errors
+from pyti import catch_errors
 
 
 def chande_momentum_oscillator(close_data, period):

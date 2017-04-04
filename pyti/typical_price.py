@@ -1,5 +1,5 @@
 import numpy as np
-from py_ti import catch_errors
+from pyti import catch_errors
 
 
 def typical_price(close_data, high_data, low_data):

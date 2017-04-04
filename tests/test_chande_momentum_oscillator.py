@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import chande_momentum_oscillator
+from pyti import chande_momentum_oscillator
 
 
 class TestChandeMomentumOscillator(unittest.TestCase):

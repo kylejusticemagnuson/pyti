@@ -1,9 +1,9 @@
 import numpy as np
-from py_ti import catch_errors
-from py_ti.smoothed_moving_average import (
+from pyti import catch_errors
+from pyti.smoothed_moving_average import (
     smoothed_moving_average as smma
     )
-from py_ti.average_true_range import (
+from pyti.average_true_range import (
     average_true_range as atr
     )
 

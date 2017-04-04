@@ -1,6 +1,6 @@
 import numpy as np
-from py_ti import catch_errors
-from py_ti.function_helper import fill_for_noncomputable_vals
+from pyti import catch_errors
+from pyti.function_helper import fill_for_noncomputable_vals
 
 
 def chaikin_money_flow(close_data, high_data, low_data, volume, period):

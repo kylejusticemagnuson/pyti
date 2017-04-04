@@ -1,5 +1,5 @@
-from py_ti import catch_errors
-from py_ti.simple_moving_average import (
+from pyti import catch_errors
+from pyti.simple_moving_average import (
     simple_moving_average as sma
     )
 

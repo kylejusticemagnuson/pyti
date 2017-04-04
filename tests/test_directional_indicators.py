@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import directional_indicators
+from pyti import directional_indicators
 
 
 class TestDirectionalIndicators(unittest.TestCase):

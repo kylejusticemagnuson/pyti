@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import momentum
+from pyti import momentum
 
 
 class TestMomentum(unittest.TestCase):

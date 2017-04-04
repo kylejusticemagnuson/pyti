@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import typical_price
+from pyti import typical_price
 
 
 class TestTypicalPrice(unittest.TestCase):

@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import commodity_channel_index
+from pyti import commodity_channel_index
 
 
 class TestCommodityChannelIndex(unittest.TestCase):

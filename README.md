@@ -48,6 +48,7 @@ Moving Average Envelope
   -Lower Band
 Negative Directional Index (-DI)
 Negative Directional Movement (-DM)
+On Balance Volume
 Positive Directional Index (+DI)
 Positive Directional Movement (+DM)
 Price Channels

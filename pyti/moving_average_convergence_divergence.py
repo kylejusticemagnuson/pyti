@@ -1,5 +1,5 @@
-from py_ti import catch_errors
-from py_ti.exponential_moving_average import (
+from pyti import catch_errors
+from pyti.exponential_moving_average import (
     exponential_moving_average as ema
     )
 

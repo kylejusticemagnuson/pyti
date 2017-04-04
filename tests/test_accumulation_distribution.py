@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 
 from tests.sample_data import SampleData
-from py_ti import accumulation_distribution
+from pyti import accumulation_distribution
 
 
 class TestAccumulationDistribution(unittest.TestCase):
