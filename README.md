@@ -69,6 +69,7 @@ Volume Index
   -Negative Volume Index
 Weighted Moving Average
 ```
+pyti is currently only compatible with Python 2.7
 
 Install using pip:
 ```
