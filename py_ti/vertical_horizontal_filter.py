@@ -5,7 +5,9 @@ from py_ti.function_helper import fill_for_noncomputable_vals
 
 def vertical_horizontal_filter(data, period):
     """
-    Vertical Horizontal Filter
+    Vertical Horizontal Filter.
+
+    Formula:
     ABS(pHIGH - pLOW) / SUM(ABS(Pi - Pi-1))
     """
     catch_errors.check_for_period_error(data, period)

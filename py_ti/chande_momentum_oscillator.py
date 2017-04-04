@@ -6,6 +6,9 @@ from py_ti import catch_errors
 def chande_momentum_oscillator(close_data, period):
     """
     Chande Momentum Oscillator.
+
+    Formula:
+    cmo = 100 * ((sum_up - sum_down) / (sum_up + sum_down))
     """
     catch_errors.check_for_period_error(close_data, period)
 

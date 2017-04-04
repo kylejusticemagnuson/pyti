@@ -7,6 +7,8 @@ from py_ti.exponential_moving_average import (
 def moving_average_convergence_divergence(data, short_period, long_period):
     """
     Moving Average Convergence Divergence.
+
+    Formula:
     EMA(DATA, P1) - EMA(DATA, P2)
     """
     catch_errors.check_for_period_error(data, short_period)

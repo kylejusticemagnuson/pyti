@@ -8,7 +8,9 @@ from py_ti.typical_price import typical_price
 
 def band_width(high_data, low_data, period):
     """
-    Bandwidth
+    Bandwidth.
+
+    Formula:
     BW = SMA(H - L)
     """
     catch_errors.check_for_input_len_diff(high_data, low_data)
@@ -19,7 +21,9 @@ def band_width(high_data, low_data, period):
 
 def center_band(close_data, high_data, low_data, period):
     """
-    Center Band
+    Center Band.
+
+    Formula:
     CB = SMA(TP)
     """
     tp = typical_price(close_data, high_data, low_data)
@@ -29,7 +33,9 @@ def center_band(close_data, high_data, low_data, period):
 
 def upper_band(close_data, high_data, low_data, period):
     """
-    Upper Band
+    Upper Band.
+
+    Formula:
     UB = CB + BW
     """
     cb = center_band(close_data, high_data, low_data, period)
@@ -40,7 +46,9 @@ def upper_band(close_data, high_data, low_data, period):
 
 def lower_band(close_data, high_data, low_data, period):
     """
-    Lower Band
+    Lower Band.
+
+    Formula:
     LB = CB - BW
     """
     cb = center_band(close_data, high_data, low_data, period)

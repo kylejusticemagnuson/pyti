@@ -5,6 +5,8 @@ from py_ti.function_helper import fill_for_noncomputable_vals
 def momentum(data, period):
     """
     Momentum.
+
+    Formula:
     DATA[i] - DATA[i - period]
     """
     catch_errors.check_for_period_error(data, period)

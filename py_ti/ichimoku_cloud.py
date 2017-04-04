@@ -22,6 +22,8 @@ def conversion_base_line_helper(data, period):
 def tenkansen(data, period=9):
     """
     TenkanSen (Conversion Line)
+
+    Formula:
     (H + L) / 2  :: default period=9
     """
     ts = conversion_base_line_helper(data, period)
@@ -31,6 +33,8 @@ def tenkansen(data, period=9):
 def kijunsen(data, period=26):
     """
     KijunSen (Base Line)
+
+    Formula:
     (H + L) / 2  :: default period=26
     """
     ks = conversion_base_line_helper(data, period)
@@ -40,6 +44,8 @@ def kijunsen(data, period=26):
 def chiku_span(data):
     """
     Chiku Span (Lagging Span)
+
+    Formula:
     Close shifted back 26 bars
     """
     cs = data[25::]
@@ -49,6 +55,8 @@ def chiku_span(data):
 def senkou_a(data):
     """
     Senkou A (Leading Span A)
+
+    Formula:
     (TenkanSen + KijunSen) / 2 :: Shift Forward 26 bars
     """
     sa = (tenkansen(data) + kijunsen(data)) / 2
@@ -61,6 +69,8 @@ def senkou_a(data):
 def senkou_b(data, period=52):
     """
     Senkou B (Leading Span B)
+
+    Formula:
     (H + L) / 2  :: default period=52 :: shifted forward 26 bars
     """
     sb = conversion_base_line_helper(data, period)

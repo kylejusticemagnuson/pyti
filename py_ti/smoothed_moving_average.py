@@ -6,6 +6,9 @@ from py_ti.function_helper import fill_for_noncomputable_vals
 def smoothed_moving_average(data, period):
     """
     Smoothed Moving Average.
+
+    Formula:
+    smma = avg(data(n)) - avg(data(n)/n) + data(t)/n
     """
     catch_errors.check_for_period_error(data, period)
     smma = map(

@@ -5,6 +5,8 @@ from py_ti.true_range import true_range
 def average_true_range(close_data, period):
     """
     Average True Range.
+
+    Formula:
     ATRt = ATRt-1 * (n - 1) + TRt / n
     """
     tr = true_range(close_data, period)

@@ -4,7 +4,7 @@ from py_ti.function_helper import fill_for_noncomputable_vals
 
 def rate_of_change(data, period):
     """
-    Rate of Change
+    Rate of Change.
 
     Formula:
     (Close - Close n periods ago) / (Close n periods ago) * 100

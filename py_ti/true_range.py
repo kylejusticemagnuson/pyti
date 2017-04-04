@@ -6,6 +6,8 @@ from py_ti.function_helper import fill_for_noncomputable_vals
 def true_range(close_data, period):
     """
     True Range.
+
+    Formula:
     TRt = MAX(abs(Ht - Lt), abs(Ht - Ct-1), abs(Lt - Ct-1))
     """
     catch_errors.check_for_period_error(close_data, period)

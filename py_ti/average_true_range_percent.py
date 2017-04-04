@@ -8,6 +8,8 @@ from py_ti.average_true_range import (
 def average_true_range_percent(close_data, period):
     """
     Average True Range Percent.
+
+    Formula:
     ATRP = (ATR / CLOSE) * 100
     """
     catch_errors.check_for_period_error(close_data, period)

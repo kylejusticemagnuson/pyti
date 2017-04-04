@@ -5,6 +5,8 @@ from py_ti.standard_variance import standard_variance as sv
 def volatility(data, period):
     """
     Volatility.
+
+    Formula:
     SDt / SVt
     """
     volatility = sd(data, period) / sv(data, period)

@@ -5,6 +5,8 @@ from py_ti.typical_price import typical_price as tp
 def money_flow(close_data, high_data, low_data, volume):
     """
     Money Flow.
+
+    Formula:
     MF = VOLUME * TYPICAL PRICE
     """
     catch_errors.check_for_input_len_diff(

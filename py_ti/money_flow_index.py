@@ -8,7 +8,9 @@ from py_ti.money_flow import money_flow
 
 def money_flow_index(close_data, high_data, low_data, volume, period):
     """
-    Money Flow Index
+    Money Flow Index.
+
+    Formula:
     MFI = 100 - (100 / (1 + PMF / NMF))
     """
     catch_errors.check_for_input_len_diff(

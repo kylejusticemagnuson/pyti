@@ -11,6 +11,8 @@ from py_ti.average_true_range import (
 def calculate_up_moves(high_data):
     """
     Up Move.
+
+    Formula:
     UPMOVE = Ht - Ht-1
     """
     up_moves = map(
@@ -23,6 +25,8 @@ def calculate_up_moves(high_data):
 def calculate_down_moves(low_data):
     """
     Down Move.
+
+    Formula:
     DWNMOVE = Lt-1 - Lt
     """
     down_moves = map(
@@ -34,7 +38,9 @@ def calculate_down_moves(low_data):
 
 def positive_directional_movement(high_data, low_data):
     """
-    Positive Directional Movement (+DM)
+    Positive Directional Movement (+DM).
+
+    Formula:
     +DM: if UPMOVE > DWNMOVE and UPMOVE > 0 then +DM = UPMOVE else +DM = 0
     """
     catch_errors.check_for_input_len_diff(high_data, low_data)
@@ -53,7 +59,9 @@ def positive_directional_movement(high_data, low_data):
 
 def negative_directional_movement(high_data, low_data):
     """
-    Negative Directional Movement (-DM)
+    Negative Directional Movement (-DM).
+
+
     -DM: if DWNMOVE > UPMOVE and DWNMOVE > 0 then -DM = DWNMOVE else -Dm = 0
     """
     catch_errors.check_for_input_len_diff(high_data, low_data)
@@ -72,7 +80,9 @@ def negative_directional_movement(high_data, low_data):
 
 def positive_directional_index(close_data, high_data, low_data, period):
     """
-    Positive Directional Index (+DI)
+    Positive Directional Index (+DI).
+
+    Formula:
     +DI = 100 * SMMA(+DM) / ATR
     """
     catch_errors.check_for_input_len_diff(close_data, high_data, low_data)
@@ -85,7 +95,9 @@ def positive_directional_index(close_data, high_data, low_data, period):
 
 def negative_directional_index(close_data, high_data, low_data, period):
     """
-    Negative Directional Index (-DI)
+    Negative Directional Index (-DI).
+
+    Formula:
     -DI = 100 * SMMA(-DM) / ATR
     """
     catch_errors.check_for_input_len_diff(close_data, high_data, low_data)
@@ -99,6 +111,8 @@ def negative_directional_index(close_data, high_data, low_data, period):
 def average_directional_index(close_data, high_data, low_data, period):
     """
     Average Directional Index.
+
+    Formula:
     ADX = 100 * SMMA(abs((+DI - -DI) / (+DI + -DI)))
     """
     avg_di = (abs(

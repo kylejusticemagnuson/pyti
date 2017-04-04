@@ -6,8 +6,9 @@ from py_ti.exponential_moving_average import (
 
 def triple_exponential_moving_average(data, period):
     """
-    Triple Exponential Moving Average
+    Triple Exponential Moving Average.
 
+    Formula:
     TEMA = (3*EMA - 3*EMA(EMA)) + EMA(EMA(EMA))
     """
     catch_errors.check_for_period_error(data, period)

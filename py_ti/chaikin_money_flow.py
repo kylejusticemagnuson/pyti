@@ -6,6 +6,8 @@ from py_ti.function_helper import fill_for_noncomputable_vals
 def chaikin_money_flow(close_data, high_data, low_data, volume, period):
     """
     Chaikin Money Flow.
+
+    Formula:
     CMF = SUM[(((Cn - Ln) - (Hn - Cn)) / (Hn - Ln)) * V] / SUM(Vn)
     """
     catch_errors.check_for_input_len_diff(

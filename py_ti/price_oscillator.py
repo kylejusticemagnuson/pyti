@@ -6,7 +6,9 @@ from py_ti.exponential_moving_average import (
 
 def price_oscillator(data, short_period, long_period):
     """
-    Price Oscillator
+    Price Oscillator.
+
+    Formula:
     (short EMA - long EMA / long EMA) * 100
     """
     catch_errors.check_for_period_error(data, short_period)

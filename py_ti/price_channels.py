@@ -6,7 +6,10 @@ from py_ti.exponential_moving_average import (
 
 def upper_price_channel(data, period, upper_percent):
     """
-    Upper Price Channel
+    Upper Price Channel.
+
+    Formula:
+    upc = EMA(t) * (1 + upper_percent / 100)
     """
     catch_errors.check_for_period_error(data, period)
 
@@ -17,7 +20,10 @@ def upper_price_channel(data, period, upper_percent):
 
 def lower_price_channel(data, period, lower_percent):
     """
-    Lower Price Channel
+    Lower Price Channel.
+
+    Formula:
+    lpc = EMA(t) * (1 - lower_percent / 100)
     """
     catch_errors.check_for_period_error(data, period)
 

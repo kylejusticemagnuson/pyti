@@ -9,6 +9,8 @@ from py_ti.simple_moving_average import (
 def commodity_channel_index(close_data, high_data, low_data, period):
     """
     Commodity Channel Index.
+
+    Formula:
     CCI = (TP - SMA(TP)) / (0.015 * Mean Deviation)
     """
     catch_errors.check_for_input_len_diff(close_data, high_data, low_data)

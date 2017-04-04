@@ -10,7 +10,9 @@ def volume_index_helper(vi, idx, close_data, volume):
 
 def positive_volume_index(close_data, volume):
     """
-    Positive Volume Index (PVI)
+    Positive Volume Index (PVI).
+
+    Formula:
     PVI0 = 1
     IF Vt > Vt-1
         PVIt = PVIt-1 + (CLOSEt - CLOSEt-1 / CLOSEt-1 * PVIt-1)
@@ -30,7 +32,9 @@ def positive_volume_index(close_data, volume):
 
 def negative_volume_index(close_data, volume):
     """
-    Negative Volume Index (NVI)
+    Negative Volume Index (NVI).
+
+    Formula:
     NVI0 = 1
     IF Vt < Vt-1
         NVIt = NVIt-1 + (CLOSEt - CLOSEt-1 / CLOSEt-1 * NVIt-1)

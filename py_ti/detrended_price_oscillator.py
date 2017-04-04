@@ -6,6 +6,8 @@ from py_ti.function_helper import fill_for_noncomputable_vals
 def detrended_price_oscillator(data, period):
     """
     Detrended Price Oscillator.
+
+    Formula:
     DPO = DATA[i] - Avg(DATA[period/2 + 1])
     """
     catch_errors.check_for_period_error(data, period)

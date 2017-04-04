@@ -6,10 +6,11 @@ def exponential_moving_average(data, period):
     """
     Exponential Moving Average.
 
-    Formula: p0 + (1 - w) * p1 + (1 - w)^2 * p2 + (1 + w)^3 * p3 +...
+    Formula:
+    p0 + (1 - w) * p1 + (1 - w)^2 * p2 + (1 + w)^3 * p3 +...
                 /   1 + (1 - w) + (1 - w)^2 + (1 - w)^3 +...
 
-            where: w = 2 / (N + 1)
+    where: w = 2 / (N + 1)
     """
     catch_errors.check_for_period_error(data, period)
     emas = map(

@@ -4,7 +4,9 @@ from py_ti import catch_errors
 
 def accumulation_distribution(close_data, high_data, low_data, volume):
     """
-    Accumulation/Distribution
+    Accumulation/Distribution.
+
+    Formula:
     A/D = (Ct - Lt) - (Ht - Ct) / (Ht - Lt) * Vt + A/Dt-1
     """
     catch_errors.check_for_input_len_diff(

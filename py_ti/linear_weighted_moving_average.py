@@ -5,6 +5,8 @@ from py_ti.function_helper import fill_for_noncomputable_vals
 def linear_weighted_moving_average(data, period):
     """
     Linear Weighted Moving Average.
+
+    Formula:
     LWMA = SUM(DATA[i]) * i / SUM(i)
     """
     catch_errors.check_for_period_error(data, period)

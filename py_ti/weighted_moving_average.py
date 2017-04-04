@@ -4,7 +4,7 @@ from py_ti.function_helper import fill_for_noncomputable_vals
 
 def weighted_moving_average(data, period):
     """
-    Weighted Moving Average
+    Weighted Moving Average.
 
     Formula:
     (P1 + 2 P2 + 3 P3 + ... + n Pn) / K

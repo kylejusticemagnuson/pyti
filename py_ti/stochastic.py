@@ -8,7 +8,10 @@ from py_ti.simple_moving_average import (
 
 def percent_k(data, period):
     """
-    %K
+    %K.
+
+    Formula:
+    %k = data(t) - low(n) / (high(n) - low(n))
     """
     catch_errors.check_for_period_error(data, period)
     percent_k = map(
@@ -25,7 +28,10 @@ def percent_k(data, period):
 
 def percent_d(data, period):
     """
-    %D
+    %D.
+
+    Formula:
+    %D = SMA(%K, 3)
     """
     p_k = percent_k(data, period)
     percent_d = sma(p_k, 3)

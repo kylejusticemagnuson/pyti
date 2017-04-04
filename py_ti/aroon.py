@@ -6,6 +6,8 @@ from py_ti.function_helper import fill_for_noncomputable_vals
 def aroon_up(data, period):
     """
     Aroon Up.
+
+    Formula:
     AROONUP = (((PERIOD) - (PERIODS since PERIOD high)) / (PERIOD)) * 100
     """
     catch_errors.check_for_period_error(data, period)
@@ -25,6 +27,8 @@ def aroon_up(data, period):
 def aroon_down(data, period):
     """
     Aroon Down.
+
+    Formula:
     AROONDWN = (((PERIOD) - (PERIODS SINCE PERIOD LOW)) / (PERIOD)) * 100
     """
     catch_errors.check_for_period_error(data, period)

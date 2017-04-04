@@ -7,6 +7,7 @@ def relative_strength_index(data, period):
     """
     Relative Strength Index.
 
+    Formula:
     RSI = 100 - (100 / 1 + (prevGain/prevLoss))
     """
     catch_errors.check_for_period_error(data, period)

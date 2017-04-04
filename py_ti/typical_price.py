@@ -5,6 +5,8 @@ from py_ti import catch_errors
 def typical_price(close_data, high_data, low_data):
     """
     Typical Price.
+
+    Formula:
     TPt = (HIGHt + LOWt + CLOSEt) / 3
     """
     catch_errors.check_for_input_len_diff(close_data, high_data, low_data)

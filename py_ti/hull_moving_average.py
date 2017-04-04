@@ -8,6 +8,8 @@ from py_ti.weighted_moving_average import (
 def hull_moving_average(data, period):
     """
     Hull Moving Average.
+
+    Formula:
     HMA = WMA(2*WMA(n/2) - WMA(n)), sqrt(n)
     """
     catch_errors.check_for_period_error(data, period)

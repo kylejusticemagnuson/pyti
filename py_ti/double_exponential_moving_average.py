@@ -8,6 +8,7 @@ def double_exponential_moving_average(data, period):
     """
     Double Exponential Moving Average.
 
+    Formula:
     DEMA = 2*EMA - EMA(EMA)
     """
     catch_errors.check_for_period_error(data, period)

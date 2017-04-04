@@ -8,7 +8,10 @@ from py_ti.exponential_moving_average import (
 
 def double_smoothed_stochastic(data, period):
     """
-    Double Smoothed Stochastic
+    Double Smoothed Stochastic.
+
+    Formula:
+    dss = 100 *  EMA(Close - Lowest Low) / EMA(Highest High - Lowest Low)
     """
     catch_errors.check_for_period_error(data, period)
     lows = map(
