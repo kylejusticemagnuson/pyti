@@ -70,4 +70,19 @@ Volume Index
 Weighted Moving Average
 ```
 
+Install using pip:
+```pip install pyti```
+
+Simple example usage of library:
+```python
+from pyti.exponential_moving_average import exponential_moving_average as ema
+
+data = [6, 7, 3, 6, 3, 9, 5]
+period = 2
+res = ema(data, period)
+
+# res = [np.nan, 6.75, 4.0, 5.25, 3.75, 7.5, 6.0]
+```
+
+
 To use this library on AWS infrastructure such as Lambda, you will need to use the https://github.com/vitolimandibhrata/aws-lambda-numpy build of numpy.
