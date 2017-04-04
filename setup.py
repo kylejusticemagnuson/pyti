@@ -3,12 +3,15 @@ from os import path
 
 here = path.abspath(path.dirname(__file__))
 
+
 setup(
     name="pyti",
 
     version='0.1.0',
 
-    description='Library containing various technical indicator functions',
+    description='Technical Indicator Library',
+    long_description="This library contains various financial technical"
+                     "indicators that can be used to analyze financial data.",
 
     url='https://github.com/kylejusticemagnuson/pyti',
 
