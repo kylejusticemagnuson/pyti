@@ -79,7 +79,7 @@ pip install pyti
 
 Simple example usage of library:
 ```python
-from pyti.exponential_moving_average import exponential_moving_average as ema
+from py_ti.exponential_moving_average import exponential_moving_average as ema
 
 data = [6, 7, 3, 6, 3, 9, 5]
 period = 2
