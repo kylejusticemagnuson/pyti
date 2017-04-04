@@ -71,7 +71,9 @@ Weighted Moving Average
 ```
 
 Install using pip:
-```pip install pyti```
+```
+pip install pyti
+```
 
 Simple example usage of library:
 ```python
@@ -83,6 +85,3 @@ res = ema(data, period)
 
 # res = [np.nan, 6.75, 4.0, 5.25, 3.75, 7.5, 6.0]
 ```
-
-
-To use this library on AWS infrastructure such as Lambda, you will need to use the https://github.com/vitolimandibhrata/aws-lambda-numpy build of numpy.
