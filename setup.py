@@ -7,7 +7,7 @@ here = path.abspath(path.dirname(__file__))
 setup(
     name="pyti",
 
-    version='0.1.0',
+    version='0.1.1',
 
     description='Technical Indicator Library',
     long_description="This library contains various financial technical "
