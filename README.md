@@ -73,6 +73,7 @@ Typical Price
 Ultimate Oscillator
 Vertical Horizontal Filter
 Volatility
+Volume Adjusted Moving Average
 Volume Index
   -Positive Volume Index
   -Negative Volume Index

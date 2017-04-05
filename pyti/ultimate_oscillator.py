@@ -22,6 +22,8 @@ def buying_pressure(close_data, low_data):
 
 
 def avg_helper(close_data, low_data, period):
+    catch_errors.check_for_input_len_diff(close_data, low_data)
+    catch_errors.check_for_period_error(close_data, period)
     bp = buying_pressure(close_data, low_data)
     tr = true_range(close_data, period)
     avg = map(

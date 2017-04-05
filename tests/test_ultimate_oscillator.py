@@ -199,3 +199,10 @@ class TestUltimateOscillator(unittest.TestCase):
     def test_ultimate_oscillator(self):
         uo = ultimate_oscillator.ultimate_oscillator(self.close_data, self.low_data)
         np.testing.assert_array_equal(uo, self.uo_expected)
+
+    def test_uo_invalid_data(self):
+        self.close_data.append(0)
+        with self.assertRaises(Exception) as cm:
+            ultimate_oscillator.ultimate_oscillator(self.close_data, self.low_data)
+        expected = "Error: mismatched data lengths, check to ensure that all input data is the same length and valid"
+        self.assertEqual(str(cm.exception), expected)
