@@ -79,6 +79,7 @@ Volume Index
   -Negative Volume Index
 Volume Oscillator
 Weighted Moving Average
+Williams %R
 ```
 pyti is currently only compatible with Python 2.7
 
