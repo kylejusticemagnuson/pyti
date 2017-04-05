@@ -70,6 +70,7 @@ Triangular Moving Average
 Triple Exponential Moving Average
 True Range
 Typical Price
+Ultimate Oscillator
 Vertical Horizontal Filter
 Volatility
 Volume Index
