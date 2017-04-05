@@ -63,6 +63,7 @@ Standard Variance
 Stochastic
   -%K
   -%D
+StochRSI
 Rate of Change
 Relative Strength Index
 Triangular Moving Average
