@@ -162,7 +162,7 @@ class TestVolumeAdjustedMovingAverage(unittest.TestCase):
         expected = ("Error: mismatched data lengths, check to ensure that all input data is the same length and valid")
         self.assertEqual(str(cm.exception), expected)
 
-    def test_vama_period(self):
+    def test_vama_invalid_period(self):
         period = 128
         with self.assertRaises(Exception) as cm:
             volume_adjusted_moving_average.volume_adjusted_moving_average(self.data, self.volume, period)
