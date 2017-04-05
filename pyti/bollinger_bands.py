@@ -113,3 +113,16 @@ def percent_bandwidth(data, period, std=2.0):
                          )
 
     return percent_bandwidth
+
+
+def percent_b(data, period, upper_bb_std=2.0, lower_bb_std=2.0):
+    """
+    %B.
+
+    Formula:
+    %B = ((data - lb) / (ub - lb)) * 100
+    """
+    lb = lower_bollinger_band(data, period, lower_bb_std)
+    ub = upper_bollinger_band(data, period, upper_bb_std)
+    percent_b = ((np.array(data) - lb) / (ub - lb)) * 100
+    return percent_b

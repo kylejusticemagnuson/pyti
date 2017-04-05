@@ -18,6 +18,7 @@ Bollinger Bands
   -Bandwidth
   -Percent Bandwidth
   -Range
+  -%B
 Chaikin Money Flow
 Chande Momentum Oscillator
 Commodity Channel Index
@@ -62,18 +63,23 @@ Standard Variance
 Stochastic
   -%K
   -%D
+StochRSI
 Rate of Change
 Relative Strength Index
 Triangular Moving Average
 Triple Exponential Moving Average
 True Range
 Typical Price
+Ultimate Oscillator
 Vertical Horizontal Filter
 Volatility
+Volume Adjusted Moving Average
 Volume Index
   -Positive Volume Index
   -Negative Volume Index
+Volume Oscillator
 Weighted Moving Average
+Williams %R
 ```
 pyti is currently only compatible with Python 2.7
 
