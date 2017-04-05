@@ -77,6 +77,7 @@ Volume Adjusted Moving Average
 Volume Index
   -Positive Volume Index
   -Negative Volume Index
+Volume Oscillator
 Weighted Moving Average
 ```
 pyti is currently only compatible with Python 2.7
