@@ -10,7 +10,7 @@ def conversion_base_line_helper(data, period):
     catch_errors.check_for_period_error(data, period)
     cblh = map(
         lambda idx:
-        (np.max(data[idx+1-period:idx+1]) -
+        (np.max(data[idx+1-period:idx+1]) +
             np.min(data[idx+1-period:idx+1])) / 2,
         range(period-1, len(data))
         )
