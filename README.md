@@ -1,6 +1,6 @@
 # pyti
 
-This library contains various financial technical indicators that can be used to analyze financial data.
+This library contains various financial technical indicators that can be used to analyze data.
 
 The complete list of indicators in this library:
 ```
@@ -98,3 +98,6 @@ res = ema(data, period)
 
 # res = [np.nan, 6.75, 4.0, 5.25, 3.75, 7.5, 6.0]
 ```
+
+If there is an indicator that you would like to see added or believe there is an error in one of the existing ones, feel free to submit it to Issues. 
+If you would like to add your own indicator, fork the project and submit a pull request. Contributions are always welcome.
