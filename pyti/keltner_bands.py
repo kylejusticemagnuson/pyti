@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 import numpy as np
 from pyti import catch_errors
 from pyti.simple_moving_average import (

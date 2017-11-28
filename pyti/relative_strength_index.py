@@ -1,6 +1,9 @@
+from __future__ import absolute_import
 import numpy as np
 from pyti import catch_errors
 from pyti.function_helper import fill_for_noncomputable_vals
+from six.moves import range
+from six.moves import zip
 
 
 def relative_strength_index(data, period):
@@ -13,25 +16,13 @@ def relative_strength_index(data, period):
     catch_errors.check_for_period_error(data, period)
 
     period = int(period)
-    changes = map(
-        lambda data_tup:
-        data_tup[1] - data_tup[0],
-        zip(data[::1], data[1::1])
-        )
+    changes = [data_tup[1] - data_tup[0] for data_tup in zip(data[::1], data[1::1])]
 
-    filtered_gain = map(lambda val: val < 0, changes)
-    gains = map(
-        lambda idx:
-        0 if filtered_gain[idx] is True else changes[idx],
-        range(0, len(filtered_gain))
-        )
+    filtered_gain = [val < 0 for val in changes]
+    gains = [0 if filtered_gain[idx] is True else changes[idx] for idx in range(0, len(filtered_gain))]
 
-    filtered_loss = map(lambda val: val > 0, changes)
-    losses = map(
-        lambda idx:
-        0 if filtered_loss[idx] is True else abs(changes[idx]),
-        range(0, len(filtered_loss))
-        )
+    filtered_loss = [val > 0 for val in changes]
+    losses = [0 if filtered_loss[idx] is True else abs(changes[idx]) for idx in range(0, len(filtered_loss))]
 
     avg_gain = np.mean(gains[:period])
     avg_loss = np.mean(losses[:period])

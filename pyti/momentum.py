@@ -1,5 +1,7 @@
+from __future__ import absolute_import
 from pyti import catch_errors
 from pyti.function_helper import fill_for_noncomputable_vals
+from six.moves import range
 
 
 def momentum(data, period):
@@ -11,10 +13,6 @@ def momentum(data, period):
     """
     catch_errors.check_for_period_error(data, period)
 
-    momentum = map(
-        lambda idx:
-        data[idx] - data[idx+1-period],
-        range(period-1, len(data))
-        )
+    momentum = [data[idx] - data[idx+1-period] for idx in range(period-1, len(data))]
     momentum = fill_for_noncomputable_vals(data, momentum)
     return momentum

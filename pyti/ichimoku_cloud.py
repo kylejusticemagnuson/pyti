@@ -1,6 +1,8 @@
+from __future__ import absolute_import
 import numpy as np
 from pyti import catch_errors
 from pyti.function_helper import fill_for_noncomputable_vals
+from six.moves import range
 
 
 def conversion_base_line_helper(data, period):
@@ -8,12 +10,8 @@ def conversion_base_line_helper(data, period):
     The only real difference between TenkanSen and KijunSen is the period value
     """
     catch_errors.check_for_period_error(data, period)
-    cblh = map(
-        lambda idx:
-        (np.max(data[idx+1-period:idx+1]) +
-            np.min(data[idx+1-period:idx+1])) / 2,
-        range(period-1, len(data))
-        )
+    cblh = [(np.max(data[idx+1-period:idx+1]) +
+            np.min(data[idx+1-period:idx+1])) / 2 for idx in range(period-1, len(data))]
 
     cblh = fill_for_noncomputable_vals(data, cblh)
     return cblh

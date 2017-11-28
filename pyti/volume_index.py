@@ -1,5 +1,7 @@
+from __future__ import absolute_import
 import numpy as np
 from pyti import catch_errors
+from six.moves import range
 
 
 def volume_index_helper(vi, idx, close_data, volume):

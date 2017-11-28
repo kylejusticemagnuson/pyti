@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from pyti.simple_moving_average import simple_moving_average as sma
 
 
@@ -20,7 +21,7 @@ def upper_band(data, period, env_percentage):
     ub = cb(t) * (1 + env_percentage)
     """
     cb = center_band(data, period)
-    ub = map(lambda val: val * (1 + float(env_percentage)), cb)
+    ub = [val * (1 + float(env_percentage)) for val in cb]
     return ub
 
 
@@ -32,5 +33,5 @@ def lower_band(data, period, env_percentage):
     lb = cb * (1 - env_percentage)
     """
     cb = center_band(data, period)
-    lb = map(lambda val: val * (1 - float(env_percentage)), cb)
+    lb = [val * (1 - float(env_percentage)) for val in cb]
     return lb
