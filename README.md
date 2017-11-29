@@ -113,5 +113,10 @@ or for Python 3.6
 tox -e py36 tests
 ```
 
+To specifically run one test in a specific Python version:
+```
+tox -e py36 -- tests/test_file_you_want_to_test:TestClassName.test_method_name
+```
+
 If there is an indicator that you would like to see added or believe there is an error in one of the existing ones, feel free to submit it to Issues. 
 If you would like to add your own indicator, fork the project and submit a pull request. Contributions are always welcome.
