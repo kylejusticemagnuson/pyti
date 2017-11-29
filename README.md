@@ -99,5 +99,19 @@ res = ema(data, period)
 # res = [np.nan, 6.75, 4.0, 5.25, 3.75, 7.5, 6.0]
 ```
 
+Running the whole test suite using tox:
+```
+tox
+```
+
+To run tests for just Python 2.7 use
+```
+tox -e py27 tests
+```
+or for Python 3.6
+```
+tox -e py36 tests
+```
+
 If there is an indicator that you would like to see added or believe there is an error in one of the existing ones, feel free to submit it to Issues. 
 If you would like to add your own indicator, fork the project and submit a pull request. Contributions are always welcome.
