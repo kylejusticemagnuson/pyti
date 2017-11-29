@@ -81,7 +81,7 @@ Volume Oscillator
 Weighted Moving Average
 Williams %R
 ```
-pyti is currently only compatible with Python 2.7
+pyti is now compatible with both Python 2.7 and Python 3.6
 
 Install using pip:
 ```
@@ -108,7 +108,7 @@ To run tests for just Python 2.7 use
 ```
 tox -e py27 tests
 ```
-or for Python 3.6
+or just for Python 3.6
 ```
 tox -e py36 tests
 ```
