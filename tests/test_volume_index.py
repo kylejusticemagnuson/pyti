@@ -10,8 +10,6 @@ class TestVolumeIndex(unittest.TestCase):
     def setUp(self):
         """Create data to use for testing."""
         self.close_data = SampleData().get_sample_close_data()
-        self.high_data = SampleData().get_sample_high_data()
-        self.low_data = SampleData().get_sample_low_data()
         self.volume = SampleData().get_sample_volume()
 
         self.pvi_expected = [1.0, 1.0131617136727868, 1.0152943403369297,
