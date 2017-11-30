@@ -1,5 +1,7 @@
+from __future__ import absolute_import
 from pyti import catch_errors
 from pyti.function_helper import fill_for_noncomputable_vals
+from six.moves import range
 
 
 def exponential_moving_average(data, period):
@@ -13,12 +15,8 @@ def exponential_moving_average(data, period):
     where: w = 2 / (N + 1)
     """
     catch_errors.check_for_period_error(data, period)
-    emas = map(
-        lambda idx:
-        exponential_moving_average_helper(
-            data[idx - period + 1:idx + 1], period),
-        range(period - 1, len(data))
-        )
+    emas = [exponential_moving_average_helper(
+            data[idx - period + 1:idx + 1], period) for idx in range(period - 1, len(data))]
     emas = fill_for_noncomputable_vals(data, emas)
     return emas
 

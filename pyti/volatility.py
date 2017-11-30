@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from pyti.standard_deviation import standard_deviation as sd
 from pyti.standard_variance import standard_variance as sv
 

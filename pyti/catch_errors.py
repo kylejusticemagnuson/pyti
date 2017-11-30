@@ -23,7 +23,7 @@ def check_for_input_len_diff(*args):
     message that informs the developer that the data set's lengths are not the
     same.
     """
-    arrays_len = map(lambda arr: len(arr), args)
+    arrays_len = [len(arr) for arr in args]
     if not all(a == arrays_len[0] for a in arrays_len):
         err_msg = ("Error: mismatched data lengths, check to ensure that all "
                    "input data is the same length and valid")

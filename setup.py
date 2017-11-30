@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 setup(
     name="pyti",
 
-    version='0.1.4',
+    version='0.2.0',
 
     description='Technical Indicator Library',
     long_description="This library contains various financial technical "
@@ -26,6 +26,7 @@ setup(
         'License :: OSI Approved :: MIT License',
 
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.6',
     ],
 
     keywords='financial technical indicator functions',

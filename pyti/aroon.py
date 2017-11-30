@@ -1,6 +1,8 @@
+from __future__ import absolute_import
 import numpy as np
 from pyti import catch_errors
 from pyti.function_helper import fill_for_noncomputable_vals
+from six.moves import range
 
 
 def aroon_up(data, period):
@@ -13,15 +15,11 @@ def aroon_up(data, period):
     catch_errors.check_for_period_error(data, period)
     period = int(period)
 
-    aroon_up = map(
-        lambda idx:
-        ((period -
+    a_up = [((period -
             data[idx+1-period:idx+1].index(np.max(data[idx+1-period:idx+1]))) /
-            period) * 100,
-        range(period-1, len(data))
-        )
-    aroon_up = fill_for_noncomputable_vals(data, aroon_up)
-    return aroon_up
+            float(period)) * 100 for idx in range(period-1, len(data))]
+    a_up = fill_for_noncomputable_vals(data, a_up)
+    return a_up
 
 
 def aroon_down(data, period):
@@ -34,11 +32,8 @@ def aroon_down(data, period):
     catch_errors.check_for_period_error(data, period)
     period = int(period)
 
-    aroon_down = map(
-        lambda idx:
-        ((period -
+    a_down = [((period -
             data[idx+1-period:idx+1].index(np.min(data[idx+1-period:idx+1]))) /
-            period) * 100,
-        range(period-1, len(data)))
-    aroon_down = fill_for_noncomputable_vals(data, aroon_down)
-    return aroon_down
+            float(period)) * 100 for idx in range(period-1, len(data))]
+    a_down = fill_for_noncomputable_vals(data, a_down)
+    return a_down

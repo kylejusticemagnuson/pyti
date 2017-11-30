@@ -6,7 +6,9 @@ dist/
 __pycache__/
 *.so
 *~
+.vscode
 
 # due to using tox and pytest
 .tox
 .cache
+.bak

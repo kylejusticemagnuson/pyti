@@ -2,6 +2,8 @@
 
 This library contains various financial technical indicators that can be used to analyze data.
 
+Now compatible with both Python 2.7 and Python 3.6
+
 The complete list of indicators in this library:
 ```
 Accumulation/Distribution
@@ -81,7 +83,6 @@ Volume Oscillator
 Weighted Moving Average
 Williams %R
 ```
-pyti is currently only compatible with Python 2.7
 
 Install using pip:
 ```
@@ -97,6 +98,25 @@ period = 2
 res = ema(data, period)
 
 # res = [np.nan, 6.75, 4.0, 5.25, 3.75, 7.5, 6.0]
+```
+
+Running the whole test suite using tox:
+```
+tox
+```
+
+To run tests for just Python 2.7 use
+```
+tox -e py27 tests
+```
+or just for Python 3.6
+```
+tox -e py36 tests
+```
+
+To specifically run one test in a specific Python version:
+```
+tox -e py36 -- tests/test_file_you_want_to_test:TestClassName.test_method_name
 ```
 
 If there is an indicator that you would like to see added or believe there is an error in one of the existing ones, feel free to submit it to Issues. 

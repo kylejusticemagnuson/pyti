@@ -1,5 +1,7 @@
+from __future__ import absolute_import
 from pyti import catch_errors
 from pyti.function_helper import fill_for_noncomputable_vals
+from six.moves import range
 
 
 def weighted_moving_average(data, period):
@@ -15,10 +17,7 @@ def weighted_moving_average(data, period):
 
     wmas = []
     for idx in range(0, len(data)-period+1):
-        product = map(
-            lambda period_idx: data[idx + period_idx] * (period_idx + 1),
-            range(0, period)
-            )
+        product = [data[idx + period_idx] * (period_idx + 1) for period_idx in range(0, period)]
         wma = sum(product) / k
         wmas.append(wma)
     wmas = fill_for_noncomputable_vals(data, wmas)
