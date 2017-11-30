@@ -2,6 +2,8 @@
 
 This library contains various financial technical indicators that can be used to analyze data.
 
+Now compatible with both Python 2.7 and Python 3.6
+
 The complete list of indicators in this library:
 ```
 Accumulation/Distribution
@@ -81,7 +83,6 @@ Volume Oscillator
 Weighted Moving Average
 Williams %R
 ```
-pyti is now compatible with both Python 2.7 and Python 3.6
 
 Install using pip:
 ```
