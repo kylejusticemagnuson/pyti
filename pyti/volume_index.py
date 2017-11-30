@@ -6,8 +6,8 @@ from six.moves import range
 
 def volume_index_helper(vi, idx, close_data):
     return (vi[idx-1] + (((close_data[idx] - close_data[idx-1]) /
-            close_data[idx-1]) * vi[idx-1])
-            )
+                          float(close_data[idx-1])) * vi[idx-1])
+           )
 
 
 def positive_volume_index(close_data, volume):
