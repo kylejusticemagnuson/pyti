@@ -112,10 +112,10 @@ def average_directional_index(close_data, high_data, low_data, period):
     ADX = 100 * SMMA(abs((+DI - -DI) / (+DI + -DI)))
     """
     avg_di = (abs(
-              positive_directional_index(
+              (positive_directional_index(
                 close_data, high_data, low_data, period) -
               negative_directional_index(
-                close_data, high_data, low_data, period) /
+                close_data, high_data, low_data, period)) /
               (positive_directional_index(
                 close_data, high_data, low_data, period) +
                negative_directional_index(
