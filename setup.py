@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 setup(
     name="pyti",
 
-    version='0.2.1',
+    version='0.2.2',
 
     description='Technical Indicator Library',
     long_description="This library contains various financial technical "
@@ -13,7 +13,7 @@ setup(
     url='https://github.com/kylejusticemagnuson/pyti',
 
     author='Kyle Justice Magnuson',
-    author_email='kyle@collectiveidea.com',
+    author_email='kyle@topsteptrader.com',
 
     license='MIT',
 
