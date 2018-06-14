@@ -13,7 +13,7 @@ def percent_k(data, period):
     %K.
 
     Formula:
-    %k = data(t) - low(n) / (high(n) - low(n))
+    %k = (data(t) - low(n)) / (high(n) - low(n))
     """
     catch_errors.check_for_period_error(data, period)
     percent_k = [((data[idx] - np.min(data[idx+1-period:idx+1])) /
