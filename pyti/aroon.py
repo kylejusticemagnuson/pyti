@@ -37,3 +37,15 @@ def aroon_down(data, period):
             float(period)) * 100 for idx in range(period-1, len(data))]
     a_down = fill_for_noncomputable_vals(data, a_down)
     return a_down
+
+
+def aroon_oscillator(data, period):
+    """
+    Aroon Oscillator.
+
+    Formula:
+    AO = AROON_UP(PERIOD) - AROON_DOWN(PERIOD)
+    """
+    catch_errors.check_for_period_error(data, period)
+    period = int(period)
+    return aroon_up(data, period) - aroon_down(data, period)

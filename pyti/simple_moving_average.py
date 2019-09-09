@@ -11,7 +11,7 @@ def simple_moving_average(data, period):
     Simple Moving Average.
 
     Formula:
-    SUM(data / N)
+    SUM(data) / N
     """
     catch_errors.check_for_period_error(data, period)
     # Mean of Empty Slice RuntimeWarning doesn't affect output so it is

@@ -10,6 +10,7 @@ Accumulation/Distribution
 Aroon
   -Aroon Up
   -Aroon Down
+  -Aroon Oscillator
 Average Directional Index
 Average True Range
 Average True Range Percent
