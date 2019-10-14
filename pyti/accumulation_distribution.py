@@ -17,11 +17,18 @@ def accumulation_distribution(close_data, high_data, low_data, volume):
 
     ad = np.zeros(len(close_data))
     for idx in range(1, len(close_data)):
-        ad[idx] = (
-            (((close_data[idx] - low_data[idx]) -
-                (high_data[idx] - close_data[idx])) /
-                (high_data[idx] - low_data[idx]) *
-                volume[idx]) +
-            ad[idx-1]
-            )
+        candle = high_data[idx] - low_data[idx]
+        if candle == 0:
+            if high_data[idx] != close_data[idx]:
+                raise RuntimeError("High and low are equals but close is not.")
+            else:
+                ad[idx] = ad[idx - 1]
+        else:
+            ad[idx] = (
+                (((close_data[idx] - low_data[idx]) -
+                    (high_data[idx] - close_data[idx])) /
+                    (high_data[idx] - low_data[idx]) *
+                    volume[idx]) +
+                ad[idx-1]
+                )
     return ad
