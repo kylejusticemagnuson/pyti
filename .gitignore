@@ -12,3 +12,5 @@ __pycache__/
 .tox
 .cache
 .bak
+/.pytest_cache/v/cache
+/pyti.pyproj
