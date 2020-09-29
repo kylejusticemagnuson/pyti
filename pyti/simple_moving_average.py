@@ -18,6 +18,9 @@ def simple_moving_average(data, period):
     # supressed
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", category=RuntimeWarning)
-        sma = [np.mean(data[idx-(period-1):idx+1]) for idx in range(0, len(data))]
+        sma = [
+            np.mean(data[idx - (period - 1):idx + 1])
+            for idx in range(0, len(data))
+        ]
     sma = fill_for_noncomputable_vals(data, sma)
     return sma

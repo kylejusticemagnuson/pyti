@@ -13,7 +13,10 @@ def standard_variance(data, period):
     (Ct - AVGt)^2 / N
     """
     catch_errors.check_for_period_error(data, period)
-    sv = [np.var(data[idx+1-period:idx+1], ddof=1) for idx in range(period-1, len(data))]
+    sv = [
+        np.var(data[idx + 1 - period:idx + 1], ddof=1)
+        for idx in range(period - 1, len(data))
+    ]
     sv = fill_for_noncomputable_vals(data, sv)
 
     return sv

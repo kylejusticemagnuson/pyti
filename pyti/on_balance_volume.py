@@ -21,10 +21,10 @@ def on_balance_volume(close_data, volume):
     obv = np.zeros(len(volume))
     obv[0] = 1
     for idx in range(1, len(obv)):
-        if close_data[idx] > close_data[idx-1]:
-            obv[idx] = obv[idx-1] + volume[idx]
-        elif close_data[idx] < close_data[idx-1]:
-            obv[idx] = obv[idx-1] - volume[idx]
-        elif close_data[idx] == close_data[idx-1]:
-            obv[idx] = obv[idx-1]
+        if close_data[idx] > close_data[idx - 1]:
+            obv[idx] = obv[idx - 1] + volume[idx]
+        elif close_data[idx] < close_data[idx - 1]:
+            obv[idx] = obv[idx - 1] - volume[idx]
+        elif close_data[idx] == close_data[idx - 1]:
+            obv[idx] = obv[idx - 1]
     return obv

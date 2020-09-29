@@ -1,8 +1,6 @@
 from __future__ import absolute_import
 from pyti import catch_errors
-from pyti.simple_moving_average import (
-    simple_moving_average as sma
-    )
+from pyti.simple_moving_average import simple_moving_average as sma
 
 
 def triangular_moving_average(data, period):

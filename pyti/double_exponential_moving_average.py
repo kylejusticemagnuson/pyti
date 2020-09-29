@@ -1,8 +1,6 @@
 from __future__ import absolute_import
 from pyti import catch_errors
-from pyti.exponential_moving_average import (
-    exponential_moving_average as ema
-    )
+from pyti.exponential_moving_average import exponential_moving_average as ema
 
 
 def double_exponential_moving_average(data, period):

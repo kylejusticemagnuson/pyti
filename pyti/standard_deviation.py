@@ -14,7 +14,10 @@ def standard_deviation(data, period):
     """
     catch_errors.check_for_period_error(data, period)
 
-    stds = [np.std(data[idx+1-period:idx+1], ddof=1) for idx in range(period-1, len(data))]
+    stds = [
+        np.std(data[idx + 1 - period:idx + 1], ddof=1)
+        for idx in range(period - 1, len(data))
+    ]
 
     stds = fill_for_noncomputable_vals(data, stds)
     return stds

@@ -13,7 +13,8 @@ def rate_of_change(data, period):
     """
     catch_errors.check_for_period_error(data, period)
 
-    rocs = [((data[idx] - data[idx - (period - 1)]) /
-         data[idx - (period - 1)]) * 100 for idx in range(period - 1, len(data))]
+    rocs = [((data[idx] - data[idx - (period - 1)]) / data[idx -
+                                                           (period - 1)]) * 100
+            for idx in range(period - 1, len(data))]
     rocs = fill_for_noncomputable_vals(data, rocs)
     return rocs

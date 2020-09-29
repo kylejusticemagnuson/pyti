@@ -15,8 +15,11 @@ def exponential_moving_average(data, period):
     where: w = 2 / (N + 1)
     """
     catch_errors.check_for_period_error(data, period)
-    emas = [exponential_moving_average_helper(
-            data[idx - period + 1:idx + 1], period) for idx in range(period - 1, len(data))]
+    emas = [
+        exponential_moving_average_helper(data[idx - period + 1:idx + 1],
+                                          period)
+        for idx in range(period - 1, len(data))
+    ]
     emas = fill_for_noncomputable_vals(data, emas)
     return emas
 

@@ -1,4 +1,3 @@
-
 def check_for_period_error(data, period):
     """
     Check for Period Error.

@@ -14,7 +14,10 @@ def buying_pressure(close_data, low_data):
     BP = current close - min()
     """
     catch_errors.check_for_input_len_diff(close_data, low_data)
-    bp = [close_data[idx] - np.min([low_data[idx], close_data[idx-1]]) for idx in range(1, len(close_data))]
+    bp = [
+        close_data[idx] - np.min([low_data[idx], close_data[idx - 1]])
+        for idx in range(1, len(close_data))
+    ]
     bp = fill_for_noncomputable_vals(close_data, bp)
     return bp
 
@@ -24,7 +27,10 @@ def avg_helper(close_data, low_data, period):
     catch_errors.check_for_period_error(close_data, period)
     bp = buying_pressure(close_data, low_data)
     tr = true_range(close_data, period)
-    avg = [sum(bp[idx+1-period:idx+1]) / sum(tr[idx+1-period:idx+1]) for idx in range(period-1, len(close_data))]
+    avg = [
+        sum(bp[idx + 1 - period:idx + 1]) / sum(tr[idx + 1 - period:idx + 1])
+        for idx in range(period - 1, len(close_data))
+    ]
     avg = fill_for_noncomputable_vals(close_data, avg)
     return avg
 

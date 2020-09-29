@@ -6,6 +6,7 @@ from six.moves import range
 
 import pandas as pd
 
+
 def smoothed_moving_average(data, period):
     """
     Smoothed Moving Average.
@@ -15,4 +16,4 @@ def smoothed_moving_average(data, period):
     """
     catch_errors.check_for_period_error(data, period)
     series = pd.Series(data)
-    return series.ewm(alpha = 1.0/period).mean().values.flatten()
+    return series.ewm(alpha=1.0 / period).mean().values.flatten()
