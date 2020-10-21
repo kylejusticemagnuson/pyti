@@ -1,3 +1,21 @@
+'''THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND
+NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE
+DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY,
+WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.'''
+
+# Bitcoin Cash (BCH)   qpz32c4lg7x7lnk9jg6qg7s4uavdce89myax5v5nuk
+# Ether (ETH) -        0x843d3DEC2A4705BD4f45F674F641cE2D0022c9FB
+# Litecoin (LTC) -     Lfk5y4F7KZa9oRxpazETwjQnHszEPvqPvu
+# Bitcoin (BTC) -      34L8qWiQyKr8k4TnHDacfjbaSqQASbBtTd
+
+# contact :- github@jamessawyer.co.uk
+
+
+
 from __future__ import absolute_import
 import numpy as np
 from pyti import catch_errors
@@ -11,17 +29,12 @@ def accumulation_distribution(close_data, high_data, low_data, volume):
     Formula:
     A/D = (Ct - Lt) - (Ht - Ct) / (Ht - Lt) * Vt + A/Dt-1
     """
-    catch_errors.check_for_input_len_diff(
-        close_data, high_data, low_data, volume
-        )
+    catch_errors.check_for_input_len_diff(close_data, high_data, low_data,
+                                          volume)
 
     ad = np.zeros(len(close_data))
     for idx in range(1, len(close_data)):
-        ad[idx] = (
-            (((close_data[idx] - low_data[idx]) -
-                (high_data[idx] - close_data[idx])) /
-                (high_data[idx] - low_data[idx]) *
-                volume[idx]) +
-            ad[idx-1]
-            )
+        ad[idx] = (((close_data[idx] - low_data[idx]) -
+                    (high_data[idx] - close_data[idx])) /
+                   (high_data[idx] - low_data[idx]) * volume[idx]) + ad[idx - 1]
     return ad
