@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -141,17 +140,17 @@ class TestRelativeStrengthIndex(unittest.TestCase):
     def test_relative_strength_index_period_6(self):
         period = 6
         rsi = relative_strength_index.relative_strength_index(self.data, period)
-        np.testing.assert_array_equal(rsi, self.rsi_period_6_expected)
+        np.testing.assert_allclose(rsi, self.rsi_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_relative_strength_index_period_8(self):
         period = 8
         rsi = relative_strength_index.relative_strength_index(self.data, period)
-        np.testing.assert_array_equal(rsi, self.rsi_period_8_expected)
+        np.testing.assert_allclose(rsi, self.rsi_period_8_expected, rtol=1e-9, equal_nan=True)
 
     def test_relative_strength_index_period_10(self):
         period = 10
         rsi = relative_strength_index.relative_strength_index(self.data, period)
-        np.testing.assert_array_equal(rsi, self.rsi_period_10_expected)
+        np.testing.assert_allclose(rsi, self.rsi_period_10_expected, rtol=1e-9, equal_nan=True)
 
     def test_relative_strength_index_invalid_period(self):
         period = 128

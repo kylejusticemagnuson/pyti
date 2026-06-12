@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -37,7 +36,7 @@ class TestOnBalanceVolume(unittest.TestCase):
 
     def test_obv(self):
         obv = on_balance_volume.on_balance_volume(self.close_data, self.volume)
-        np.testing.assert_array_equal(obv, self.obv_expected)
+        np.testing.assert_allclose(obv, self.obv_expected, rtol=1e-9, equal_nan=True)
 
     def test_obv_invalid_data(self):
         self.close_data.append(0)

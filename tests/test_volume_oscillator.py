@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -57,7 +56,7 @@ class TestVolumeOscillator(unittest.TestCase):
         short_period = 6
         long_period = 12
         vo = volume_oscillator.volume_oscillator(self.volume, short_period, long_period)
-        np.testing.assert_array_equal(vo, self.vo_short_6_long_12_expected)
+        np.testing.assert_allclose(vo, self.vo_short_6_long_12_expected, rtol=1e-9, equal_nan=True)
 
     def test_vo_invalid_short_period(self):
         short_period = 128

@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -132,17 +131,17 @@ class TestSimpleMovingAverage(unittest.TestCase):
     def test_simple_moving_average_period_6(self):
         period = 6
         sma = simple_moving_average.simple_moving_average(self.data, period)
-        np.testing.assert_array_equal(sma, self.sma_period_6_expected)
+        np.testing.assert_allclose(sma, self.sma_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_simple_moving_average_period_8(self):
         period = 8
         sma = simple_moving_average.simple_moving_average(self.data, period)
-        np.testing.assert_array_equal(sma, self.sma_period_8_expected)
+        np.testing.assert_allclose(sma, self.sma_period_8_expected, rtol=1e-9, equal_nan=True)
 
     def test_simple_moving_average_period_10(self):
         period = 10
         sma = simple_moving_average.simple_moving_average(self.data, period)
-        np.testing.assert_array_equal(sma, self.sma_perio_10_expected)
+        np.testing.assert_allclose(sma, self.sma_perio_10_expected, rtol=1e-9, equal_nan=True)
 
     def test_simple_moving_average_invalid_period(self):
         period = 128

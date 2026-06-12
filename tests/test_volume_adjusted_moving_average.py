@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -143,17 +142,17 @@ class TestVolumeAdjustedMovingAverage(unittest.TestCase):
     def test_vama_period_6(self):
         period = 6
         vama = volume_adjusted_moving_average.volume_adjusted_moving_average(self.data, self.volume, period)
-        np.testing.assert_array_equal(vama, self.vama_period_6_expected)
+        np.testing.assert_allclose(vama, self.vama_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_vama_period_8(self):
         period = 8
         vama = volume_adjusted_moving_average.volume_adjusted_moving_average(self.data, self.volume, period)
-        np.testing.assert_array_equal(vama, self.vama_period_8_expected)
+        np.testing.assert_allclose(vama, self.vama_period_8_expected, rtol=1e-9, equal_nan=True)
 
     def test_vama_period_10(self):
         period = 10
         vama = volume_adjusted_moving_average.volume_adjusted_moving_average(self.data, self.volume, period)
-        np.testing.assert_array_equal(vama, self.vama_period_10_expected)
+        np.testing.assert_allclose(vama, self.vama_period_10_expected, rtol=1e-9, equal_nan=True)
 
     def test_vama_invalid_data(self):
         self.data.append(1)

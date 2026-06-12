@@ -1,11 +1,9 @@
-from __future__ import absolute_import
 import numpy as np
 from pyti import catch_errors
 from pyti.function_helper import fill_for_noncomputable_vals
 from pyti.simple_moving_average import (
     simple_moving_average as sma
     )
-from six.moves import range
 
 
 def upper_bollinger_band(data, period, std_mult=2.0):

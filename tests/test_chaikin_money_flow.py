@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -145,17 +144,17 @@ class TestChaikinMoneyFlow(unittest.TestCase):
     def test_cmf_period_6(self):
         period = 6
         cmf = chaikin_money_flow.chaikin_money_flow(self.close_data, self.high_data, self.low_data, self.volume, period)
-        np.testing.assert_array_equal(cmf, self.cmf_period_6_expected)
+        np.testing.assert_allclose(cmf, self.cmf_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_cmf_period_8(self):
         period = 8
         cmf = chaikin_money_flow.chaikin_money_flow(self.close_data, self.high_data, self.low_data, self.volume, period)
-        np.testing.assert_array_equal(cmf, self.cmf_period_8_expected)
+        np.testing.assert_allclose(cmf, self.cmf_period_8_expected, rtol=1e-9, equal_nan=True)
 
     def test_cmf_period_10(self):
         period = 10
         cmf = chaikin_money_flow.chaikin_money_flow(self.close_data, self.high_data, self.low_data, self.volume, period)
-        np.testing.assert_array_equal(cmf, self.cmf_period_10_expected)
+        np.testing.assert_allclose(cmf, self.cmf_period_10_expected, rtol=1e-9, equal_nan=True)
 
     def test_cmf_invalid_period(self):
         period = 128

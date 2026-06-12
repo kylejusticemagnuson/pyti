@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -58,7 +57,7 @@ class TestAccumulationDistribution(unittest.TestCase):
 
     def test_money_flow(self):
         mf = money_flow.money_flow(self.close_data, self.high_data, self.low_data, self.volume)
-        np.testing.assert_array_equal(mf, self.mf_expected)
+        np.testing.assert_allclose(mf, self.mf_expected, rtol=1e-9, equal_nan=True)
 
     def test_money_flow_invalid_data(self):
         self.close_data.append(1)

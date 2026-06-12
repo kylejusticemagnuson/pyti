@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -142,17 +141,17 @@ class TestStandardVariance(unittest.TestCase):
     def test_standard_variance_period_6(self):
         period = 6
         sv = standard_variance.standard_variance(self.data, period)
-        np.testing.assert_array_equal(sv, self.sv_period_6_expected)
+        np.testing.assert_allclose(sv, self.sv_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_standard_variance_period_8(self):
         period = 8
         sv = standard_variance.standard_variance(self.data, period)
-        np.testing.assert_array_equal(sv, self.sv_period_8_expected)
+        np.testing.assert_allclose(sv, self.sv_period_8_expected, rtol=1e-9, equal_nan=True)
 
     def test_standard_variance_period_10(self):
         period = 10
         sv = standard_variance.standard_variance(self.data, period)
-        np.testing.assert_array_equal(sv, self.sv_period_10_expected)
+        np.testing.assert_allclose(sv, self.sv_period_10_expected, rtol=1e-9, equal_nan=True)
 
     def test_standard_variance_invalid_period(self):
         period = 128

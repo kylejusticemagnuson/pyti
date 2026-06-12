@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -208,17 +207,17 @@ class TestStochastic(unittest.TestCase):
     def test_percent_k_period_6(self):
         period = 6
         percent_k = stochastic.percent_k(self.data, period)
-        np.testing.assert_array_equal(percent_k, self.percent_k_period_6_expected)
+        np.testing.assert_allclose(percent_k, self.percent_k_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_percent_k_period_8(self):
         period = 8
         percent_k = stochastic.percent_k(self.data, period)
-        np.testing.assert_array_equal(percent_k, self.percent_k_period_8_expected)
+        np.testing.assert_allclose(percent_k, self.percent_k_period_8_expected, rtol=1e-9, equal_nan=True)
 
     def test_percent_k_period_10(self):
         period = 10
         percent_k = stochastic.percent_k(self.data, period)
-        np.testing.assert_array_equal(percent_k, self.percent_k_period_10_expected)
+        np.testing.assert_allclose(percent_k, self.percent_k_period_10_expected, rtol=1e-9, equal_nan=True)
 
     def test_percent_k_invalid_period(self):
         period = 128
@@ -228,17 +227,17 @@ class TestStochastic(unittest.TestCase):
     def test_percent_d_period_6(self):
         period = 6
         percent_d = stochastic.percent_d(self.data, period)
-        np.testing.assert_array_equal(percent_d, self.percent_d_period_6_expected)
+        np.testing.assert_allclose(percent_d, self.percent_d_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_percent_d_period_8(self):
         period = 8
         percent_d = stochastic.percent_d(self.data, period)
-        np.testing.assert_array_equal(percent_d, self.percent_d_period_8_expected)
+        np.testing.assert_allclose(percent_d, self.percent_d_period_8_expected, rtol=1e-9, equal_nan=True)
 
     def test_percent_d_period_10(self):
         period = 10
         percent_d = stochastic.percent_d(self.data, period)
-        np.testing.assert_array_equal(percent_d, self.percent_d_period_10_expected)
+        np.testing.assert_allclose(percent_d, self.percent_d_period_10_expected, rtol=1e-9, equal_nan=True)
 
     def test_percent_d_invalid_period(self):
         period = 128

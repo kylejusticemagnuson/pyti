@@ -2,7 +2,12 @@
 
 This library contains various financial technical indicators that can be used to analyze data.
 
-Now compatible with both Python 2.7 and Python 3.6
+Requires Python 3.10 or newer (tested on 3.10–3.14). The only runtime dependency is numpy.
+
+> **Note:** version 0.3.0 is a breaking release. Several indicators were fixed
+> or reworked to match their textbook definitions, so numeric output differs
+> from 0.2.x and a few functions take new high/low arguments. See
+> [CHANGELOG.md](CHANGELOG.md) for the full list.
 
 The complete list of indicators in this library:
 ```
@@ -97,26 +102,17 @@ data = [6, 7, 3, 6, 3, 9, 5]
 period = 2
 res = ema(data, period)
 
-# res = [np.nan, 6.75, 4.0, 5.25, 3.75, 7.5, 6.0]
+# res = [nan, 6.5, 4.1667, 5.3889, 3.7963, 7.2654, 5.7551]
 ```
 
-Running the whole test suite using tox:
+Running the test suite (uses [uv](https://docs.astral.sh/uv/), or any venv with `pytest` and `pandas` installed):
 ```
-tox
-```
-
-To run tests for just Python 2.7 use
-```
-tox -e py27 tests
-```
-or just for Python 3.6
-```
-tox -e py36 tests
+uv run pytest
 ```
 
-To specifically run one test in a specific Python version:
+To run a single test:
 ```
-tox -e py36 -- tests/test_file_you_want_to_test:TestClassName.test_method_name
+uv run pytest tests/test_file_you_want_to_test.py::TestClassName::test_method_name
 ```
 
 If there is an indicator that you would like to see added or believe there is an error in one of the existing ones, feel free to submit it to Issues. 

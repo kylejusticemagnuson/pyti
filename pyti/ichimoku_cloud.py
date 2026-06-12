@@ -1,8 +1,6 @@
-from __future__ import absolute_import
 import numpy as np
 from pyti import catch_errors
 from pyti.function_helper import fill_for_noncomputable_vals
-from six.moves import range
 
 
 def conversion_base_line_helper(data, period):
@@ -46,7 +44,10 @@ def chiku_span(data):
     Formula:
     Close shifted back 26 bars
     """
-    cs = data[25::]
+    shift = 26
+    cs = np.append(
+        np.asarray(data[shift:], dtype=float), np.repeat(np.nan, shift)
+        )
     return cs
 
 

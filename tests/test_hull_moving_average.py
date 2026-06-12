@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -141,17 +140,17 @@ class TestHullMovingAverage(unittest.TestCase):
     def test_hma_period_6(self):
         period = 6
         hma = hull_moving_average.hull_moving_average(self.data, period)
-        np.testing.assert_array_equal(hma, self.hma_period_6_expected)
+        np.testing.assert_allclose(hma, self.hma_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_hma_period_8(self):
         period = 8
         hma = hull_moving_average.hull_moving_average(self.data, period)
-        np.testing.assert_array_equal(hma, self.hma_period_8_expected)
+        np.testing.assert_allclose(hma, self.hma_period_8_expected, rtol=1e-9, equal_nan=True)
 
     def test_hma_period_10(self):
         period = 10
         hma = hull_moving_average.hull_moving_average(self.data, period)
-        np.testing.assert_array_equal(hma, self.hma_period_10_expected)
+        np.testing.assert_allclose(hma, self.hma_period_10_expected, rtol=1e-9, equal_nan=True)
 
     def test_hull_moving_average_invalid_period(self):
         period = 128

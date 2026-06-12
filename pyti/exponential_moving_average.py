@@ -1,7 +1,6 @@
-from __future__ import absolute_import
+import numpy as np
 from pyti import catch_errors
-from pyti.function_helper import fill_for_noncomputable_vals
-from six.moves import range
+from pyti.function_helper import first_computable_index
 
 
 def exponential_moving_average(data, period):
@@ -9,24 +8,24 @@ def exponential_moving_average(data, period):
     Exponential Moving Average.
 
     Formula:
-    p0 + (1 - w) * p1 + (1 - w)^2 * p2 + (1 + w)^3 * p3 +...
-                /   1 + (1 - w) + (1 - w)^2 + (1 - w)^3 +...
+    EMAt = alpha * Pt + (1 - alpha) * EMAt-1
 
-    where: w = 2 / (N + 1)
+    where: alpha = 2 / (N + 1) and the series is seeded with the simple
+    moving average of the first N values. Leading NaNs in the input (e.g.
+    from a previous indicator's warm-up window) are skipped and preserved
+    in the output.
     """
     catch_errors.check_for_period_error(data, period)
-    emas = [exponential_moving_average_helper(
-            data[idx - period + 1:idx + 1], period) for idx in range(period - 1, len(data))]
-    emas = fill_for_noncomputable_vals(data, emas)
+    period = int(period)
+    data = np.asarray(data, dtype=float)
+    alpha = 2 / float(period + 1)
+
+    emas = np.full(len(data), np.nan)
+    start = first_computable_index(data)
+    seed_idx = start + period - 1
+    if seed_idx >= len(data):
+        return emas
+    emas[seed_idx] = np.mean(data[start:seed_idx + 1])
+    for idx in range(seed_idx + 1, len(data)):
+        emas[idx] = alpha * data[idx] + (1 - alpha) * emas[idx - 1]
     return emas
-
-
-def exponential_moving_average_helper(data, period):
-    w = 2 / float(period + 1)
-    ema_top = data[period - 1]
-    ema_bottom = 1
-    for idx in range(1, period):  # idx 1 to n
-        ema_top += ((1 - w)**idx) * data[period - 1 - idx]
-        ema_bottom += (1 - w)**idx
-    ema = ema_top / ema_bottom
-    return ema

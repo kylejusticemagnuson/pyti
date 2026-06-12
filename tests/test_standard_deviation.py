@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -142,17 +141,17 @@ class TestStandardDeviation(unittest.TestCase):
     def test_standard_deviation_period_6(self):
         period = 6
         std = standard_deviation.standard_deviation(self.data, period)
-        np.testing.assert_array_equal(std, self.std_period_6_expected)
+        np.testing.assert_allclose(std, self.std_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_standard_deviation_period_8(self):
         period = 8
         std = standard_deviation.standard_deviation(self.data, period)
-        np.testing.assert_array_equal(std, self.std_period_8_expected)
+        np.testing.assert_allclose(std, self.std_period_8_expected, rtol=1e-9, equal_nan=True)
 
     def test_standard_deviation_period_10(self):
         period = 10
         std = standard_deviation.standard_deviation(self.data, period)
-        np.testing.assert_array_equal(std, self.std_period_10_expected)
+        np.testing.assert_allclose(std, self.std_period_10_expected, rtol=1e-9, equal_nan=True)
 
     def test_standard_deviation_invalid_period(self):
         period = 128

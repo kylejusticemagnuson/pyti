@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -60,7 +59,7 @@ class TestAccumulationDistribution(unittest.TestCase):
 
     def test_accumulation_distribution(self):
         ad = accumulation_distribution.accumulation_distribution(self.close_data, self.high_data, self.low_data, self.volume)
-        np.testing.assert_array_equal(ad, self.ad_expected)
+        np.testing.assert_allclose(ad, self.ad_expected, rtol=1e-9, equal_nan=True)
 
     def test_ad_invalid_data(self):
         self.close_data.append(1)

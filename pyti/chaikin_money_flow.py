@@ -1,8 +1,6 @@
-from __future__ import absolute_import
 import numpy as np
 from pyti import catch_errors
 from pyti.function_helper import fill_for_noncomputable_vals
-from six.moves import range
 
 
 def chaikin_money_flow(close_data, high_data, low_data, volume, period):

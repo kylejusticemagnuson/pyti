@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import numpy as np
 from pyti import catch_errors
 from pyti.smoothed_moving_average import (
@@ -7,7 +6,6 @@ from pyti.smoothed_moving_average import (
 from pyti.average_true_range import (
     average_true_range as atr
     )
-from six.moves import range
 
 
 def calculate_up_moves(high_data):
@@ -43,8 +41,8 @@ def positive_directional_movement(high_data, low_data):
     up_moves = calculate_up_moves(high_data)
     down_moves = calculate_down_moves(low_data)
 
-    pdm = []
-    for idx in range(0, len(up_moves)):
+    pdm = [np.nan]
+    for idx in range(1, len(up_moves)):
         if up_moves[idx] > down_moves[idx] and up_moves[idx] > 0:
             pdm.append(up_moves[idx])
         else:
@@ -64,8 +62,8 @@ def negative_directional_movement(high_data, low_data):
     up_moves = calculate_up_moves(high_data)
     down_moves = calculate_down_moves(low_data)
 
-    ndm = []
-    for idx in range(0, len(down_moves)):
+    ndm = [np.nan]
+    for idx in range(1, len(down_moves)):
         if down_moves[idx] > up_moves[idx] and down_moves[idx] > 0:
             ndm.append(down_moves[idx])
         else:
@@ -84,7 +82,7 @@ def positive_directional_index(close_data, high_data, low_data, period):
     catch_errors.check_for_input_len_diff(close_data, high_data, low_data)
     pdi = (100 *
            smma(positive_directional_movement(high_data, low_data), period) /
-           atr(close_data, period)
+           atr(close_data, high_data, low_data, period)
            )
     return pdi
 
@@ -99,7 +97,7 @@ def negative_directional_index(close_data, high_data, low_data, period):
     catch_errors.check_for_input_len_diff(close_data, high_data, low_data)
     ndi = (100 *
            smma(negative_directional_movement(high_data, low_data), period) /
-           atr(close_data, period)
+           atr(close_data, high_data, low_data, period)
            )
     return ndi
 

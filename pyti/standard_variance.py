@@ -1,8 +1,6 @@
-from __future__ import absolute_import
 import numpy as np
 from pyti import catch_errors
 from pyti.function_helper import fill_for_noncomputable_vals
-from six.moves import range
 
 
 def standard_variance(data, period):
