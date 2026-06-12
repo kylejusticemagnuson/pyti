@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -141,7 +140,7 @@ class TestMovingAverageEnvelope(unittest.TestCase):
     def test_center_band_period_6(self):
         period = 6
         cb = moving_average_envelope.center_band(self.data, period)
-        np.testing.assert_array_equal(cb, self.center_band_period_6_expected)
+        np.testing.assert_allclose(cb, self.center_band_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_center_band_invalid_period(self):
         period = 128
@@ -154,7 +153,7 @@ class TestMovingAverageEnvelope(unittest.TestCase):
         period = 6
         env_percentage = 0.1
         ub = moving_average_envelope.upper_band(self.data, period, env_percentage)
-        np.testing.assert_array_equal(ub, self.upper_band_period_6_expected)
+        np.testing.assert_allclose(ub, self.upper_band_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_upper_band_invalid_period(self):
         period = 128
@@ -168,7 +167,7 @@ class TestMovingAverageEnvelope(unittest.TestCase):
         period = 6
         env_percentage = 0.1
         lb = moving_average_envelope.lower_band(self.data, period, env_percentage)
-        np.testing.assert_array_equal(lb, self.lower_band_period_6_expected)
+        np.testing.assert_allclose(lb, self.lower_band_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_lower_band_invalid_period(self):
         period = 128

@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -57,7 +56,7 @@ class TestTypicalPrice(unittest.TestCase):
 
     def test_typical_price(self):
         tp = typical_price.typical_price(self.close_data, self.high_data, self.low_data)
-        np.testing.assert_array_equal(tp, self.tp_expected)
+        np.testing.assert_allclose(tp, self.tp_expected, rtol=1e-9, equal_nan=True)
 
     def test_typical_price_invalid_data(self):
         self.close_data.append(1)

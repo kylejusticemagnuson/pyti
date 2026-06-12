@@ -1,24 +1,22 @@
-from __future__ import absolute_import
 import numpy as np
 from pyti import catch_errors
-from pyti.function_helper import fill_for_noncomputable_vals
-from six.moves import range
 
 
-def true_range(close_data, period):
+def true_range(close_data, high_data, low_data):
     """
     True Range.
 
     Formula:
-    TRt = MAX(abs(Ht - Lt), abs(Ht - Ct-1), abs(Lt - Ct-1))
+    TRt = MAX(Ht - Lt, ABS(Ht - Ct-1), ABS(Lt - Ct-1))
+    with TR0 = H0 - L0
     """
-    catch_errors.check_for_period_error(close_data, period)
+    catch_errors.check_for_input_len_diff(close_data, high_data, low_data)
 
-    tr = [np.max([np.max(close_data[idx+1-period:idx+1]) -
-                np.min(close_data[idx+1-period:idx+1]),
-                abs(np.max(close_data[idx+1-period:idx+1]) -
-                close_data[idx-1]),
-                abs(np.min(close_data[idx+1-period:idx+1]) -
-                close_data[idx-1])]) for idx in range(period-1, len(close_data))]
-    tr = fill_for_noncomputable_vals(close_data, tr)
-    return tr
+    tr = [high_data[0] - low_data[0]]
+    for idx in range(1, len(close_data)):
+        tr.append(max(
+            high_data[idx] - low_data[idx],
+            abs(high_data[idx] - close_data[idx-1]),
+            abs(low_data[idx] - close_data[idx-1]),
+            ))
+    return np.array(tr)

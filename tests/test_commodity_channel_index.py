@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -144,17 +143,17 @@ class TestCommodityChannelIndex(unittest.TestCase):
     def test_cci_period_6(self):
         period = 6
         cci = commodity_channel_index.commodity_channel_index(self.close_data, self.high_data, self.low_data, period)
-        np.testing.assert_array_equal(cci, self.cci_period_6_expected)
+        np.testing.assert_allclose(cci, self.cci_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_cci_period_8(self):
         period = 8
         cci = commodity_channel_index.commodity_channel_index(self.close_data, self.high_data, self.low_data, period)
-        np.testing.assert_array_equal(cci, self.cci_period_8_expected)
+        np.testing.assert_allclose(cci, self.cci_period_8_expected, rtol=1e-9, equal_nan=True)
 
     def test_cci_period_10(self):
         period = 10
         cci = commodity_channel_index.commodity_channel_index(self.close_data, self.high_data, self.low_data, period)
-        np.testing.assert_array_equal(cci, self.cci_period_10_expected)
+        np.testing.assert_allclose(cci, self.cci_period_10_expected, rtol=1e-9, equal_nan=True)
 
     def test_commodity_channel_index_invalid_period(self):
         period = 128

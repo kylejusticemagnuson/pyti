@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 from pyti import catch_errors
 from pyti.typical_price import typical_price as tp
 

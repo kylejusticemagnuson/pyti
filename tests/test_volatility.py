@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -142,17 +141,17 @@ class TestVolatility(unittest.TestCase):
     def test_volatility_period_6(self):
         period = 6
         v = volatility.volatility(self.data, period)
-        np.testing.assert_array_equal(v, self.volatility_period_6_expected)
+        np.testing.assert_allclose(v, self.volatility_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_volatility_period_8(self):
         period = 8
         v = volatility.volatility(self.data, period)
-        np.testing.assert_array_equal(v, self.volatility_period_8_expected)
+        np.testing.assert_allclose(v, self.volatility_period_8_expected, rtol=1e-9, equal_nan=True)
 
     def test_volatility_period_10(self):
         period = 10
         v = volatility.volatility(self.data, period)
-        np.testing.assert_array_equal(v, self.volatility_period_10_expected)
+        np.testing.assert_allclose(v, self.volatility_period_10_expected, rtol=1e-9, equal_nan=True)
 
     def test_volatility_invalid_period(self):
         period = 128

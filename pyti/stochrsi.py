@@ -1,8 +1,6 @@
-from __future__ import absolute_import
 import numpy as np
 from pyti.function_helper import fill_for_noncomputable_vals
 from pyti.relative_strength_index import relative_strength_index
-from six.moves import range
 
 
 def stochrsi(data, period):

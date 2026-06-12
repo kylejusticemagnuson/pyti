@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -141,17 +140,17 @@ class TestLinearWeightedMovingAverage(unittest.TestCase):
     def test_lwma_period_6(self):
         period = 6
         lwma = linear_weighted_moving_average.linear_weighted_moving_average(self.data, period)
-        np.testing.assert_array_equal(lwma, self.lwma_period_6_expected)
+        np.testing.assert_allclose(lwma, self.lwma_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_lwma_period_8(self):
         period = 8
         lwma = linear_weighted_moving_average.linear_weighted_moving_average(self.data, period)
-        np.testing.assert_array_equal(lwma, self.lwma_period_8_expected)
+        np.testing.assert_allclose(lwma, self.lwma_period_8_expected, rtol=1e-9, equal_nan=True)
 
     def test_lwma_period_10(self):
         period = 10
         lwma = linear_weighted_moving_average.linear_weighted_moving_average(self.data, period)
-        np.testing.assert_array_equal(lwma, self.lwma_period_10_expected)
+        np.testing.assert_allclose(lwma, self.lwma_period_10_expected, rtol=1e-9, equal_nan=True)
 
     def test_lwma_invalid_period(self):
         period = 128

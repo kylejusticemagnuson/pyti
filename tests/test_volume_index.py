@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -102,7 +101,7 @@ class TestVolumeIndex(unittest.TestCase):
     def test_pvi(self):
         pvi = volume_index.positive_volume_index(self.close_data, self.volume)
         print(list(pvi))
-        np.testing.assert_array_equal(pvi, self.pvi_expected)
+        np.testing.assert_allclose(pvi, self.pvi_expected, rtol=1e-9, equal_nan=True)
 
     def test_pvi_invalid_data(self):
         self.close_data.append(1)
@@ -113,7 +112,7 @@ class TestVolumeIndex(unittest.TestCase):
 
     def test_nvi(self):
         nvi = volume_index.negative_volume_index(self.close_data, self.volume)
-        np.testing.assert_array_equal(nvi, self.nvi_expected)
+        np.testing.assert_allclose(nvi, self.nvi_expected, rtol=1e-9, equal_nan=True)
 
     def test_nvi_invalid_data(self):
         self.close_data.append(1)

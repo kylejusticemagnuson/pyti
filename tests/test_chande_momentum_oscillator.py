@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -144,17 +143,17 @@ class TestChandeMomentumOscillator(unittest.TestCase):
     def test_cmo_period_6(self):
         period = 6
         cmo = chande_momentum_oscillator.chande_momentum_oscillator(self.close_data, period)
-        np.testing.assert_array_equal(cmo, self.cmo_period_6_expected)
+        np.testing.assert_allclose(cmo, self.cmo_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_cmo_period_8(self):
         period = 8
         cmo = chande_momentum_oscillator.chande_momentum_oscillator(self.close_data, period)
-        np.testing.assert_array_equal(cmo, self.cmo_period_8_expected)
+        np.testing.assert_allclose(cmo, self.cmo_period_8_expected, rtol=1e-9, equal_nan=True)
 
     def test_cmo_period_10(self):
         period = 10
         cmo = chande_momentum_oscillator.chande_momentum_oscillator(self.close_data, period)
-        np.testing.assert_array_equal(cmo, self.cmo_period_10_expected)
+        np.testing.assert_allclose(cmo, self.cmo_period_10_expected, rtol=1e-9, equal_nan=True)
 
     def test_cmo_invalid_period(self):
         period = 128

@@ -1,9 +1,7 @@
-from __future__ import absolute_import
 import numpy as np
 import warnings
 from pyti.function_helper import fill_for_noncomputable_vals
 from pyti import catch_errors
-from six.moves import range
 
 
 def simple_moving_average(data, period):

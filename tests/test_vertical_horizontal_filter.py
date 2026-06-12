@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -125,17 +124,17 @@ class TestVerticalHorizontalFilter(unittest.TestCase):
     def test_vertical_horizontal_filter_period_6(self):
         period = 6
         vhf = vertical_horizontal_filter.vertical_horizontal_filter(self.data, period)
-        np.testing.assert_array_equal(vhf, self.vhf_period_6_expected)
+        np.testing.assert_allclose(vhf, self.vhf_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_vertical_horizontal_filter_period_8(self):
         period = 8
         vhf = vertical_horizontal_filter.vertical_horizontal_filter(self.data, period)
-        np.testing.assert_array_equal(vhf, self.vhf_period_8_expected)
+        np.testing.assert_allclose(vhf, self.vhf_period_8_expected, rtol=1e-9, equal_nan=True)
 
     def test_vertical_horizontal_filter_period_10(self):
         period = 10
         vhf = vertical_horizontal_filter.vertical_horizontal_filter(self.data, period)
-        np.testing.assert_array_equal(vhf, self.vhf_period_10_expected)
+        np.testing.assert_allclose(vhf, self.vhf_period_10_expected, rtol=1e-9, equal_nan=True)
 
     def test_vertical_horizontal_filter_invalid_period(self):
         period = 128

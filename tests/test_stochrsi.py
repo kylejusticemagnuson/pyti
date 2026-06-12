@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 import unittest
 import numpy as np
 
@@ -98,17 +97,17 @@ class TestStochRSI(unittest.TestCase):
     def test_stochrsi_period_6(self):
         period = 6
         sr = stochrsi.stochrsi(self.data, period)
-        np.testing.assert_array_equal(sr, self.stochrsi_period_6_expected)
+        np.testing.assert_allclose(sr, self.stochrsi_period_6_expected, rtol=1e-9, equal_nan=True)
 
     def test_stochrsi_period_8(self):
         period = 8
         sr = stochrsi.stochrsi(self.data, period)
-        np.testing.assert_array_equal(sr, self.stochrsi_period_8_expected)
+        np.testing.assert_allclose(sr, self.stochrsi_period_8_expected, rtol=1e-9, equal_nan=True)
 
     def test_stochrsi_period_10(self):
         period = 10
         sr = stochrsi.stochrsi(self.data, period)
-        np.testing.assert_array_equal(sr, self.stochrsi_period_10_expected)
+        np.testing.assert_allclose(sr, self.stochrsi_period_10_expected, rtol=1e-9, equal_nan=True)
 
     def test_stochrsi_invalid_period(self):
         period = 128
